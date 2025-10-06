@@ -5,7 +5,7 @@ public class ejercicio2 {
         int[] numeros = {1, 2, 3, 4,5,6,7,8,9,10};
 
         // Mostrar todos los elementos separados por un espacio
-        System.out.println("Elementos del array:");
+        System.out.print("Elementos del array:");
 
         for (int i = 0; i < numeros.length; i++) {
             System.out.print(numeros[i]+" ");
