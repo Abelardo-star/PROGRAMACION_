@@ -18,6 +18,12 @@ public class ejercicio1 {
         //Muestra por consola el indice y el valor
         //indice -> valor
 
+        System.out.println("Contenido del array:");
+        for (int i = 0; i < arrayInt.length; i++) {
+            System.out.println("Índice " + i + " -> Valor: " + arrayInt[i]);
+        }
+
+
 
     }
 }
