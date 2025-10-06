@@ -14,8 +14,15 @@ public class ejercicio3 {
         }
         // Suponemos que el primero es el más pequeño
         int menor = numeros[0];
+        //recorremos el array para encontrar al menor
+        for(int i = 1; i < numeros.length; i++){
+            if(numeros[i]< menor){
+                menor = numeros[i];
+            }
 
-
+        }
+        // Mostrar el número más pequeño
+        System.out.println("El número más pequeño es: " + menor);
     }
 }
 
