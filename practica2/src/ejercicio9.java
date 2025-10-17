@@ -31,7 +31,5 @@ public class ejercicio9 {
         // Mostrar resultados
         System.out.println("Valor máximo: " + max + " en la posición " + posMax);
         System.out.println("Valor mínimo: " + min + " en la posición " + posMin);
-
-        scanner.close();
     }
 }
