@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class ejercicio10 {
     public static void main(String[] args) {
-        String[] nombres = {"Ana", "Sofia", "Pedro"}; //Lista de los nombres
+        String[] nombres = {"Anais", "Sofia", "Pedro"}; //Lista de los nombres
         double[] notas = {9.5, 8.5, 7.5}; // Lista de las notas que corresponden a cada uno
 
         Scanner scanner = new Scanner(System.in);
