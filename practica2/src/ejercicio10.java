@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class ejercicio10 {
     public static void main(String[] args) {
-        String[] nombres = {"Ana", "Sofia", "Pedro"}; //Lista de los nombres
-        double[] notas = {9.5, 8.5, 7.5}; // Lista de las notas que corresponden a cada uno
+        String[] nombres = {"Alice", "Bob", "Charlie"}; //Lista de los nombres
+        double[] notas = {90.5, 85.0, 78.5}; // Lista de las notas que corresponden a cada uno
 
         Scanner scanner = new Scanner(System.in);
          System.out.println(" Introduce el nombre del estudiante: ");
