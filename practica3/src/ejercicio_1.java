@@ -34,7 +34,7 @@ public class ejercicio_1 {
         // %-10s → deja 10 caracteres alineado a la izquierda
         // %-" + anchoCol + "s → ajusta el ancho dinámicamente
 
-        System.out.printf("%-10s", "Array num");
+        System.out.printf("| %-10s", "Array num");
         for (int j = 0; j < doub[0].length; j++) {
             System.out.printf("| %-" + anchoCol + "s", "Columna " + j);
         }
@@ -49,7 +49,7 @@ public class ejercicio_1 {
         for (int i = 0; i < doub.length; i++) {
 
             // Imprimimos el nombre de la fila (por ejemplo, "Fila 0")
-            System.out.printf("%-10s", "Fila " + i);
+            System.out.printf("| %-10s", "Fila " + i);
 
             //Recorremos cada columna dentro de la fila
 
