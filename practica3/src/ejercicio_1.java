@@ -28,7 +28,7 @@ public class ejercicio_1 {
         //Línea superior de la tabla (decorativa)
         // repeat() repite el carácter "=" tantas veces como sea necesario
 
-        System.out.println("=".repeat(10 + (anchoCol + 2) * (doub[0].length)));
+        System.out.println("+" + "=".repeat(12 + (anchoCol + 2) * (doub[0].length)));
 
         //Impresión del encabezado de columnas
         // %-10s → deja 10 caracteres alineado a la izquierda
@@ -42,7 +42,7 @@ public class ejercicio_1 {
 
         //Línea divisoria después del encabezado
 
-        System.out.println("-".repeat(10 + (anchoCol + 2) * (doub[0].length)));
+        System.out.println("+"+ "-".repeat(12 + (anchoCol + 2) * (doub[0].length)));
 
         //Recorremos las filas del array principal
 
@@ -70,7 +70,7 @@ public class ejercicio_1 {
 
             // Cerramos la última columna con el separador y salto de línea
             System.out.println("|");
-            System.out.println("-".repeat(10 + (anchoCol + 2) * (doub[0].length)));
+            System.out.println("+" + "-".repeat(12 + (anchoCol + 2) * (doub[0].length)));
         }
     }
 }
