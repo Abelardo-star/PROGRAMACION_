@@ -1,90 +1,96 @@
 import java.util.Random;
 
 public class ejercicio_5 {
+    //Crear un programa que cuando se le introduzca números enteros rellene un array de 6 filas por 10 columnas con números enteros positivos comprendidos entre 0 y 1000 (ambos incluidos). A continuación, el programa deberá:
+    //    • dar la posición del número máximo y mínimo
+    //    • la suma total de todas las filas y columnas
+    //    • la suma de todas las columnas
+    //    • la suma de todas las filas.
     public static void main(String[] args) {
 
-        // Declaramos las filas y columnas de la matriz
         int filas = 6;
         int columnas = 10;
 
-        // Creamos la matriz de 6x10
         int[][] numeros = new int[filas][columnas];
-
-        // Para generar números aleatorios
         Random rand = new Random();
 
-        // Variables para guardar el máximo y el mínimo
-        int max = Integer.MIN_VALUE; // pongo el valor mínimo posible para que el primer número ya sea mayor
-        int min = Integer.MAX_VALUE; // pongo el valor máximo posible para que el primer número ya sea menor
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
 
-        // Estas guardan la posición del max y del min
         int maxFila = 0, maxCol = 0, minFila = 0, minCol = 0;
 
-        // Rellenamos la matriz y buscamos el máximo y el mínimo a la vez
+        // Rellenamos la matriz con números aleatorios y buscamos min y max
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
 
-                // Metemos números aleatorios entre 0 y 1000
-                numeros[i][j] = rand.nextInt(1001);
+                numeros[i][j] = rand.nextInt(1001); // número aleatorio entre 0-1000
 
-                // Si encontramos un número mayor que max, lo actualizamos
+                // comprobar máximo
                 if (numeros[i][j] > max) {
                     max = numeros[i][j];
-                    maxFila = i; // guardo la posición
+                    maxFila = i;
                     maxCol = j;
                 }
 
-                // Si encontramos un número menor que min, lo actualizamos
+                // comprobar mínimo
                 if (numeros[i][j] < min) {
                     min = numeros[i][j];
-                    minFila = i; // guardo la posición
+                    minFila = i;
                     minCol = j;
                 }
             }
         }
 
-        // Mostramos la matriz en pantalla para verla bonita
-        System.out.println("Matriz generada:");
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                System.out.printf("%5d ", numeros[i][j]); // con formato para que quede alineado
-            }
-            System.out.println(); // salto de línea al terminar una fila
-        }
-
-        // Variables para sumar filas y columnas
-        int sumaTotal = 0;
+        // Arrays para sumar filas y columnas
         int[] sumaFilas = new int[filas];
         int[] sumaColumnas = new int[columnas];
+        int sumaTotal = 0;
 
-        // Recorremos otra vez la matriz para hacer las sumas
+        // Calcular sumas
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
-                sumaFilas[i] += numeros[i][j]; // sumo la fila
-                sumaColumnas[j] += numeros[i][j]; // sumo la columna
-                sumaTotal += numeros[i][j]; // suma total
+                sumaFilas[i] += numeros[i][j];
+                sumaColumnas[j] += numeros[i][j];
+                sumaTotal += numeros[i][j];
             }
         }
 
-        // Mostrar resultados
-        System.out.println("\n----------------------------------------");
-        System.out.println("Valor máximo: " + max + " en posición [" + maxFila + "][" + maxCol + "]");
-        System.out.println("Valor mínimo: " + min + " en posición [" + minFila + "][" + minCol + "]");
-        System.out.println("Suma total de todos los valores: " + sumaTotal);
+        // ---------------- TABLA ----------------
 
-        // Mostrar suma de cada fila
-        System.out.println("\nSuma de cada fila:");
-        for (int i = 0; i < filas; i++) {
-            System.out.println("Fila " + i + ": " + sumaFilas[i]);
-        }
+        System.out.println("TABLA DE VALORES (con suma de filas):");
 
-        // Mostrar suma de cada columna
-        System.out.println("\nSuma de cada columna:");
+        // Imprimir cabecera de columnas
+        System.out.print("  ");
         for (int j = 0; j < columnas; j++) {
-            System.out.println("Columna " + j + ": " + sumaColumnas[j]);
+            System.out.printf("             C%-7d ", j);
         }
+        System.out.println("|SumaFila");
+
+        // Imprimir matriz con suma de cada fila
+        for (int i = 0; i < filas; i++) {
+            System.out.printf("Fila %-2d", i);
+            for (int j = 0; j < columnas; j++) {
+                System.out.printf("%20d ", numeros[i][j]);
+            }
+            System.out.printf("| %d\n", sumaFilas[i]);
+        }
+
+        // línea separadora
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+        // Mostrar suma de columnas
+        System.out.print("SumaCol ");
+        for (int j = 0; j < columnas; j++) {
+            System.out.printf("%20d ", sumaColumnas[j]);
+        }
+        System.out.printf("| Total = %d\n", sumaTotal);
+
+        // Resultados extra
+        System.out.println("\nMáximo: " + max + " en posición [" + maxFila + "][" + maxCol + "]");
+        System.out.println("Mínimo: " + min + " en posición [" + minFila + "][" + minCol + "]");
     }
 }
+
 
 
 
