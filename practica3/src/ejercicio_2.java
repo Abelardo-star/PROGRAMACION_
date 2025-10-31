@@ -15,9 +15,8 @@ public class ejercicio_2 {
             int[] maxColumna = new int[columnas];
             int total = 0;
 
-            // ==============================
             // 1. PEDIR NÚMEROS AL USUARIO
-            // ==============================
+
             System.out.println("Introduce 20 números enteros (4 filas × 5 columnas):");
             for (int i = 0; i < filas; i++) {
                 for (int j = 0; j < columnas; j++) {
@@ -26,9 +25,9 @@ public class ejercicio_2 {
                 }
             }
 
-            // ==============================
+
             // 2. CALCULAR SUMAS Y MÁXIMOS
-            // ==============================
+
             for (int i = 0; i < filas; i++) {
                 for (int j = 0; j < columnas; j++) {
                     int num = numeros[i][j];
@@ -42,9 +41,9 @@ public class ejercicio_2 {
                 }
             }
 
-            // ==============================
+
             // 3. MOSTRAR TABLA FORMATEADA
-            // ==============================
+
             System.out.println();
             System.out.println("================================================================");
             System.out.println("                           TABLA");
