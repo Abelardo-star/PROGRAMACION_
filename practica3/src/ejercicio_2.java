@@ -45,26 +45,26 @@ public class ejercicio_2 {
             // 3. MOSTRAR TABLA FORMATEADA
 
             System.out.println();
-            System.out.println("================================================================");
-            System.out.println("                           TABLA");
-            System.out.println("================================================================");
+            System.out.println("===========================================================================================================");
+            System.out.println("                                                   TABLA");
+            System.out.println("===========================================================================================================");
 
             for (int i = 0; i < filas; i++) {
                 for (int j = 0; j < columnas; j++) {
-                    System.out.printf("%8d", numeros[i][j]);
+                    System.out.printf("%19d", numeros[i][j]);
                 }
                 System.out.printf(" |  Σ fila %d = %6d\n", i, sumaFila[i]);
             }
 
-            System.out.println("----------------------------------------------------------------");
+            System.out.println("-------------------------------------------------------------------------------------------------------");
 
             // Mostrar máximos de columnas
             for (int j = 0; j < columnas; j++) {
-                System.out.printf("%8d", maxColumna[j]);
+                System.out.printf("|Σ columna %-1d:%-7d", j,maxColumna[j]);
             }
-            System.out.printf(" |  TOTAL = %6d\n", total);
+            System.out.printf("|TOTAL = %-6d\n", total);
 
-            System.out.println("================================================================");
+            System.out.println("==========================================================================================================");
 
             sc.close();
         }
