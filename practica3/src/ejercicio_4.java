@@ -55,7 +55,7 @@ public class ejercicio_4 {
         }
 
         Thread.sleep(800);
-        System.out.printf("  TOTAL = %6d|%n", sumaTotal);
+        System.out.printf(" TOTAL = %6d|%n", sumaTotal);
 
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------------");
     }
