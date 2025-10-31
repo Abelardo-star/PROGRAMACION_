@@ -41,28 +41,28 @@ public class ejercicio_3 {
 
         // 3. MOSTRAR TABLA FORMATEADA
 
-        System.out.println("==========================================================");
-        System.out.println("                        TABLA");
-        System.out.println("==========================================================");
+        System.out.println("====================================================================================================================");
+        System.out.println("                                                  TABLA");
+        System.out.println("====================================================================================================================");
 
         // Mostrar los números y sumas de filas
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
-                System.out.printf("%8d", numeros[i][j]); // cada número ocupa 8 espacios
+                System.out.printf(" |%17d", numeros[i][j]); // cada número ocupa 8 espacios
             }
             System.out.printf(" |  Σ fila %d = %6d\n", i, sumaFila[i]);
         }
 
         // Línea separadora inferior
-        System.out.println("----------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------------------------------------------------------");
 
         // Mostrar los mayores de cada columna y el total
         for (int j = 0; j < columnas; j++) {
-            System.out.printf("Σ col %-2d =%6d ", j, maxColumna[j]);
+            System.out.printf(" |Σ col %-2d =%6d ", j, maxColumna[j]);
         }
         System.out.printf("| TOTAL = %6d\n", total);
 
-        System.out.println("==========================================================");
+        System.out.println("=====================================================================================================================");
     }
 }
 
