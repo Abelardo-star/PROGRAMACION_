@@ -4,6 +4,8 @@ import java.util.Random;
 public class ejercicio_6 {
     public static void main(String[] args) {
 
+        //Modifica el programa anterior de tal forma que no se repita ningún número
+        // en el array además de que tiene que estar comprendido en un rango entre 20-40.
         int filas = 3;
         int columnas = 7;
         int[][] numeros = new int[filas][columnas];
