@@ -4,26 +4,23 @@ import java.util.Random;
 public class ejercicio_6 {
     public static void main(String[] args) {
 
-        //Modifica el programa anterior de tal forma que no se repita ningún número
-        // en el array además de que tiene que estar comprendido en un rango entre 20-40.
         int filas = 3;
         int columnas = 7;
         int[][] numeros = new int[filas][columnas];
 
-        // Lista con números del 20 al 40
-        ArrayList<Integer> lista = new ArrayList<>();
-        for (int i = 20; i <= 40; i++) {
-            lista.add(i);
+        // Crear array con números del 20 al 40
+        int[] lista = new int[21];
+        for (int i = 0; i < lista.length; i++) {
+            lista[i] = 20 + i;
         }
 
-        // Mezclar lista manualmente (sin shuffle)
+        // Mezclar manualmente (sin usar set/get)
         Random random = new Random();
-        for (int i = 0; i < lista.size(); i++) {
-            int posAleatoria = random.nextInt(lista.size());
-
-            int aux = lista.get(i);
-            lista.set(i, lista.get(posAleatoria));
-            lista.set(posAleatoria, aux);
+        for (int i = 0; i < lista.length; i++) {
+            int posAleatoria = random.nextInt(lista.length);
+            int aux = lista[i];
+            lista[i] = lista[posAleatoria];
+            lista[posAleatoria] = aux;
         }
 
         // Variables para máximo y mínimo
@@ -35,7 +32,7 @@ public class ejercicio_6 {
         int index = 0;
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
-                numeros[i][j] = lista.get(index);
+                numeros[i][j] = lista[index];
                 index++;
 
                 // Buscar máximo y mínimo
@@ -52,6 +49,7 @@ public class ejercicio_6 {
             }
         }
 
+        // Calcular sumas
         int sumaTotal = 0;
         int[] sumaFilas = new int[filas];
         int[] sumaColumnas = new int[columnas];
@@ -65,7 +63,6 @@ public class ejercicio_6 {
         }
 
         // ------- TABLA BONITA -------
-
         System.out.println("\n╔══════════════════════════════════════════════════╗");
         System.out.println("║   MATRIZ SIN REPETIDOS (20 - 40)   ║");
         System.out.println("╚══════════════════════════════════════════════════╝\n");
@@ -77,7 +74,6 @@ public class ejercicio_6 {
         }
         System.out.println("| SumaFila");
 
-        // Línea superior de la tabla
         System.out.println("──────────────────────────────────────────────────────────────────");
 
         // Filas
@@ -89,7 +85,6 @@ public class ejercicio_6 {
             System.out.printf("| %3d\n", sumaFilas[i]);
         }
 
-        // Línea de separación
         System.out.println("──────────────────────────────────────────────────────────────────");
 
         // Suma columnas
