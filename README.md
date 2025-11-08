@@ -1,6 +1,6 @@
 # PROGRAMACION_
 Estructura de la rama practica 3:
-
+```bash
 
 📁 programacion
 ├── 🌿 main
