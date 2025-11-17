@@ -1,25 +1,23 @@
 public class Usuario {
-    //Agregamos atribustos declarados con private
+    // Atributos privados
     private String nombre;
     private String apellidos;
     private Integer codigoPostal;
     private String direccion;
     private String email;
     private String password;
-    //Ahora implementamos un constructor que inicialice todos los atributos
-    public Usuario(String nombre, String apellidos, Integer codigoPostal, String direccion, String email, String password) {
 
+    // Constructor completo
+    public Usuario(String nombre, String apellidos, Integer codigoPostal, String direccion, String email, String password) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.codigoPostal = codigoPostal;
         this.direccion = direccion;
         this.email = email;
         this.password = password;
-
     }
 
-    //Metodo get para todos los atributos
-
+    // Metodo Get
     public String getNombre() {
         return nombre;
     }
@@ -43,8 +41,8 @@ public class Usuario {
     public String getPassword() {
         return password;
     }
-    //Metodo set para todos los atributos
 
+    // Metodo Set
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -61,15 +59,14 @@ public class Usuario {
         this.direccion = direccion;
     }
 
-    public void setEmail(String nuevoemail) {
-        if (nuevoemail != null && nuevoemail.contains("@")) {
-            this.email = nuevoemail;
+    public void setEmail(String nuevoEmail) {
+        if (nuevoEmail != null && nuevoEmail.contains("@")) {
+            this.email = nuevoEmail;
         } else {
             System.out.println("Error: Email inválido. No contiene @.");
         }
     }
 
-    // setPassword con validación mínima de longitud
     public void setPassword(String contrasena) {
         if (contrasena != null && contrasena.length() >= 6) {
             this.password = contrasena;
@@ -83,9 +80,9 @@ public class Usuario {
         return this.email.equals(email) && this.password.equals(password);
     }
 
-    // Metodo de representación
+    // Metodo toString para representar el usuario
+
     public String toString() {
         return "Usuario: " + this.nombre + " " + this.apellidos + "\nDirección: " + this.direccion + "\nEmail: " + this.email + "\nCódigo Postal: " + this.codigoPostal;
     }
 }
-
