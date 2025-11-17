@@ -6,7 +6,7 @@ public class Main {
                 "Maza",
                 11640,
                 "Calle Amargura",
-                "abelardomc25@gmail.com",
+                "abelardo@gmail.com",
                 "12345"
 
         );
