@@ -1,9 +1,30 @@
 public class Main {
     public static void main(String[] args) {
 
-        Usuario u1 = new Usuario("Ana", "Gil", 28001, "Calle Damasco", "ana@mail.com", "1234");
-        Usuario u2 = new Usuario("Luis", "Martinez", 27101, "Calle Tribal", "luis@mail.com", "3525");
-        Usuario u3 = new Usuario("Marta", "Torres", 28571, "Calle Madrid", "marta@mail.com", "74848");
+        Usuario u1 = new Usuario(
+                "Ana",
+                "Gil",
+                28001,
+                "Calle Damasco",
+                "ana@mail.com",
+                "1234"
+        );
+        Usuario u2 = new Usuario(
+                "Luis",
+                "Martinez",
+                27101,
+                "Calle Tribal",
+                "luis@mail.com",
+                "3525"
+        );
+        Usuario u3 = new Usuario(
+                "Marta",
+                "Torres",
+                28571,
+                "Calle Madrid",
+                "marta@mail.com",
+                "74848"
+        );
 
         Usuario[] usuario = {u1, u2, u3};
 
