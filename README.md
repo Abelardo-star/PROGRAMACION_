@@ -1,9 +1,9 @@
 # PROGRAMACION_
-Estructura de la rama practica 2:
+Estructura de la rama practica 1:
 ```bash
 📁 programacion
 ├── 🌿 main
-│   ├── 📁 practica2
+│   ├── 📁 practica1
 │   │   └── 📁 src
 │   │       └── 📄 ejercicio1.java
 │   │       ├── 📄 ejercicio2.java
@@ -20,6 +20,7 @@ Estructura de la rama practica 2:
 │   │       ├── 📄 ejercicio13.java.
 │   │       ├── 📄 ejercicio14.java
 │   │       └── 📄 ejercicio15.java
+│   │       └── 📄 ejercicio16.java
 │   ├── ⚙️ .gitignore
 │   └── 📘 README.md
 └── 🌿 practica2
