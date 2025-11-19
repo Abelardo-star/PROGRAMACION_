@@ -13,7 +13,7 @@ public class ejercicio_9 {
         System.out.print("Introduzca la posición del caballo (ej. d5): ");
         String posicion = sc.next(); // lee una sola palabra (sin espacios)
 
-        // Obtener columna (letra) y fila (número) sin usar charAt ni toLowerCase
+        // Obtener columna (letra) y fila (número)
         String letra = posicion.substring(0, 1);
         String numero = posicion.substring(1, 2);
 
