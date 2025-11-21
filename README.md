@@ -56,5 +56,12 @@
     │       ├── 📄 ejercicio9.java
     ├── ⚙️ .gitignore
     └── 📘 README.md
+└── 🌿 practica_Poo
+    ├── 📁 practica_Poo
+    │   └── 📁 src
+    │       ├── 📄 Usuario.java
+    │       ├── 📄 Main.java
+    ├── ⚙️ .gitignore
+    └── 📘 README.md
 
 
