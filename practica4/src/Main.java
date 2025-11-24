@@ -20,7 +20,7 @@ public class Main {
         h1.agregarAreas(a2);
         h2.agregarAreas(a3);
 
-        Medico m1= new Medico("Jose", a1,"20502084E",18,"Hombre",3000.12, 25-02-2000);
+        Medico m1= new Medico("Jose", a1,"20502084E",18,"Hombre", 25-9-2007,3002.2);
         a1.aumentarMedicos();
 
         System.out.println(a1.getNumMedicos());
