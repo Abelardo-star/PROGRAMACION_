@@ -55,4 +55,7 @@ public class Direccion {
     public void setProvincia(String provincia) {
         this.provincia = provincia;
     }
+    public String toString() {
+        return this.calle + " " + this.numero + ", " + this.cp + " " + this.localidad + " (" + this.provincia + ")";
+    }
 }

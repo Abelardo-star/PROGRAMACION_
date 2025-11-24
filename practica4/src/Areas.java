@@ -57,7 +57,7 @@ public class Areas {
 
     //DECREMENTAR MEDICOS
     public void decrementarMedicos() {
-        this.numMedicos--;
+        this.numMedicos=this.numMedicos-1;
     }
     //COMPARAR MEDICOS CON OTRAS AREAS
     public String compararMedicos(Areas otraArea) {
@@ -70,5 +70,8 @@ public class Areas {
     public int calcularCapacidadRestante(int capacidadMaxima) {
         return capacidadMaxima - this.numMedicos;
     }
-
+    public String toString() {
+        return this.nombre + " (ID: " + this.identificador + ") - Planta " + this.planta + " - Médicos: " + this.numMedicos;
+    }
 }
+

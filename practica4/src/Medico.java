@@ -120,9 +120,9 @@ public class Medico {
         nuevaArea.aumentarMedicos();
         this.area = nuevaArea;
     }
-
-
-
-
+    public String toString() {
+        return this.nombre + " (DNI: " + this.DNI + ") - Edad: " + this.edad + " - Sueldo: " + this.sueldoBruto + " - Área: " + (this.area != null ? this.area.getNombre() : "Sin Área");
+    }
 }
+
 
