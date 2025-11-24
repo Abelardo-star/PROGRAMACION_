@@ -34,7 +34,6 @@ public class Areas {
 
  //SET
 
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -53,6 +52,23 @@ public class Areas {
 
     //AUMENTAR MEDICOS
     public void aumentarMedicos() {
-        this.numMedicos=this.numMedicos+1;
+        this.numMedicos++;
     }
+
+    //DECREMENTAR MEDICOS
+    public void decrementarMedicos() {
+        this.numMedicos--;
+    }
+    //COMPARAR MEDICOS CON OTRAS AREAS
+    public String compararMedicos(Areas otraArea) {
+        if (this.numMedicos > otraArea.getNumMedicos()) return this.nombre + " tiene más médicos";
+        else if (this.numMedicos < otraArea.getNumMedicos()) return otraArea.getNombre() + " tiene más médicos";
+        else return "Ambas áreas tienen el mismo número de médicos";
+    }
+
+    //CAPACIDAD RESTANTE
+    public int calcularCapacidadRestante(int capacidadMaxima) {
+        return capacidadMaxima - this.numMedicos;
+    }
+
 }
