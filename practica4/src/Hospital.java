@@ -3,12 +3,14 @@ import java.util.ArrayList;
 public class Hospital {
     private String Nombre;
     private String cif;
+    private Direccion direccion;
     private ArrayList<Areas> areas;
 
-    public Hospital (String Nombre,String cif){
+    public Hospital (String Nombre,String cif, Direccion direccion){
         this.Nombre= Nombre;
         this.cif= cif;
         this.areas= new ArrayList<>();
+        this.direccion= direccion;
     }
     //GET
 
@@ -23,6 +25,10 @@ public class Hospital {
     public String getCif() {
         return cif;
     }
+
+    public Direccion getDireccion() {
+        return direccion;
+    }
     //SET
 
     public void setAreas(ArrayList<Areas> areas) {
@@ -35,6 +41,10 @@ public class Hospital {
 
     public void setCif(String cif) {
         this.cif = cif;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
     }
 
     //ADD AGREGAR AREAS
@@ -69,4 +79,8 @@ public class Hospital {
         }
         return null;
     }
+    public String toString() {
+        return this.Nombre + " (" + this.cif + ") - " + this.direccion;
+    }
 }
+
