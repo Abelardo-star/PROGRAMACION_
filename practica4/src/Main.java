@@ -19,17 +19,12 @@ public class Main {
     public static void cargarDatosIniciales() {
 
         Direccion d1 = new Direccion("Atocha", 1, 28001, "Madrid", "Madrid");
-        Hospital h1 = new Hospital("Hospital Central", "H001", d1);
 
         Direccion d2 = new Direccion("Gran Via", 10, 28013, "Madrid", "Madrid");
-        Hospital h2 = new Hospital("Hospital Norte", "H002", d2);
 
         hospitales.add(h1);
         hospitales.add(h2);
 
-        Areas a1 = new Areas("Cardiologia", "A1", 2, h1);
-        Areas a2 = new Areas("Pediatria", "A2", 1, h1);
-        Areas a3 = new Areas("Urgencias", "A3", 0, h2);
 
         h1.agregarAreas(a1);
         h1.agregarAreas(a2);
@@ -59,126 +54,7 @@ public class Main {
     // MENÚ
 
     public static void ejecutarMenuPrincipal() {
-        Scanner sc = new Scanner(System.in);
-        int opcion;
-
-        do {
-            System.out.println("\n=== MENÚ PRINCIPAL ===");
-            System.out.println("1. Calcular antigüedad");
-            System.out.println("2. Calcular sueldo neto");
-            System.out.println("3. Comprobar mayoría de edad");
-            System.out.println("4. Proporción de médicos en área");
-            System.out.println("5. Capacidad de área");
-            System.out.println("6. Comparar áreas");
-            System.out.println("7. Contratos por año");
-            System.out.println("0. Salir");
-
-            opcion = sc.nextInt();
-            sc.nextLine();
-
-            switch(opcion) {
-
-                case 1 -> calcularAntiguedad();
-                case 2 -> calcularSueldo();
-                case 3 -> comprobarEdad();
-                case 4 -> proporcion();
-                case 5 -> capacidadArea();
-                case 6 -> compararAreas();
-                case 7 -> contratosPorAnio();
-                case 0 -> System.out.println("Adiós");
-                default -> System.out.println("Opción incorrecta");
-            }
-
-        } while(opcion != 0);
     }
-
-    // MÉTODOS DEL MENÚ
-
-    static void calcularAntiguedad() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("DNI: ");
-        String dni = sc.nextLine();
-        Medico m = buscarMedico(dni);
-
-        if(m != null)
-            System.out.println("Antigüedad: " + m.getAniosAntiguedad());
-        else
-            System.out.println("No existe");
-    }
-
-    static void calcularSueldo() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("DNI: ");
-        String dni = sc.nextLine();
-        System.out.print("Retención (%): ");
-        double r = sc.nextDouble();
-        Medico m = buscarMedico(dni);
-
-        if(m != null)
-            System.out.println("Sueldo neto: " + m.calcularSueldoNeto(r));
-        else
-            System.out.println("No existe");
-    }
-
-    static void comprobarEdad() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("DNI: ");
-        String dni = sc.nextLine();
-        System.out.print("Edad mínima: ");
-        int edad = sc.nextInt();
-        Medico m = buscarMedico(dni);
-
-        if(m != null)
-            System.out.println(m.esMayorEdad(edad));
-    }
-
-    static void proporcion() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Nombre hospital: ");
-        String nombre = sc.nextLine();
-        Hospital h = buscarHospital(nombre);
-
-        System.out.print("ID área: ");
-        String id = sc.nextLine();
-
-        System.out.println("Proporción: " + h.getProporcionMedicosArea(id));
-    }
-
-    static void capacidadArea() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("ID Área: ");
-        String id = sc.nextLine();
-        System.out.print("Capacidad máxima: ");
-        int max = sc.nextInt();
-
-        Areas a = buscarArea(id);
-        System.out.println("Huecos: " + a.calcularCapacidadRestante(max));
-    }
-
-    static void compararAreas() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Primer ID: ");
-        String id1 = sc.nextLine();
-        System.out.print("Segundo ID: ");
-        String id2 = sc.nextLine();
-
-        Areas a1 = buscarArea(id1);
-        Areas a2 = buscarArea(id2);
-
-        System.out.println(a1.compararMedicos(a2));
-    }
-
-    static void contratosPorAnio() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Año: ");
-        int anio = sc.nextInt();
-
-        for(Contrato c : contratos) {
-            if(c.esDeAnio(anio))
-                System.out.println(c.getMedico().getNombre());
-        }
-    }
-
     // BÚSQUEDAS
 
     static Medico buscarMedico(String dni) {
@@ -195,9 +71,6 @@ public class Main {
         return null;
     }
 
-    static Hospital buscarHospital(String nombre) {
-        for(Hospital h : hospitales)
-            if(h.getNombre().equalsIgnoreCase(nombre))
                 return h;
         return null;
     }

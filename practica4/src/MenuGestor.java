@@ -12,7 +12,6 @@ public class MenuGestor {
             System.out.println("\n===== MENU PRINCIPAL =====");
             System.out.println("1. Crear Hospital");
             System.out.println("2. Crear Área");
-            System.out.println("3. Crear Médico y Contrato");
             System.out.println("4. Modificar Médico");
             System.out.println("5. Modificar Hospital");
             System.out.println("6. Calcular Antigüedad");
@@ -82,8 +81,6 @@ public class MenuGestor {
         System.out.print("Planta: ");
         int planta = sc.nextInt();
         sc.nextLine();
-        System.out.print("CIF del hospital: ");
-        String cif = sc.nextLine();
 
         Hospital h = Main.buscarHospital(cif);
         if (h == null) {
@@ -208,7 +205,6 @@ public class MenuGestor {
     private static void calcularAntiguedad() {
         Medico m = pedirMedico();
         if (m != null)
-            System.out.println("Años de antigüedad: " + m.getAniosAntiguedad());
     }
 
     private static void calcularSueldoNeto() {
