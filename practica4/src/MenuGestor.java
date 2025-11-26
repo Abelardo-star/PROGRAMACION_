@@ -25,7 +25,7 @@ public class MenuGestor {
             System.out.println("\n===== MENU PRINCIPAL =====");
             System.out.println("1. Crear Hospital");
             System.out.println("2. Crear Área");
-            System.out.println("3. Crear Médico y Contrato");
+            System.out.println("3. Crear Médico y Registrar Contrato");
             System.out.println("4. Modificar Médico");
             System.out.println("5. Modificar Hospital");
             System.out.println("6. Calcular Antigüedad");
