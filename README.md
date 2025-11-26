@@ -55,24 +55,6 @@
     │       ├── 📄 ejercicio8.java
     │       ├── 📄 ejercicio9.java
     ├── ⚙️ .gitignore
-   └── 📘 README.md
-└── 🌿 practica4
-    ├── 📁 practica4
-    │   └── 📁 src
-    │       ├── 📄 Main.java
-    │       ├── 📄 Medico.java
-    │       ├── 📄 Hospital.java
-    │       ├── 📄 Direccion.java
-    │       ├── 📄 Areas.java
-    │       ├── 📄 Contrato.java
-    │       ├── 📄 MenuGestor.java
-    ├── ⚙️ .gitignore
     └── 📘 README.md
-└── 🌿 practica_Poo
-    ├── 📁 practica_Poo
-    │   └── 📁 src
-    │       ├── 📄 Usuario.java
-    │       ├── 📄 Main.java
-    ├── ⚙️ .gitignore
-    └── 📘 README.md
+
 
