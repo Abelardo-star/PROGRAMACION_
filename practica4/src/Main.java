@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-                      //LISTAS
-                static ArrayList<Hospital> hospitales = new ArrayList<>();
-                static ArrayList<Areas> areas = new ArrayList<>();
-                static ArrayList<Medico> medicos = new ArrayList<>();
-                static ArrayList<Contrato> contratos = new ArrayList<>();
+    //LISTAS
+    static ArrayList<Hospital> hospitales = new ArrayList<>();
+    static ArrayList<Areas> areas = new ArrayList<>();
+    static ArrayList<Medico> medicos = new ArrayList<>();
+    static ArrayList<Contrato> contratos = new ArrayList<>();
 
             public static void main(String[] args) {
                 Scanner sc = new Scanner(System.in);
