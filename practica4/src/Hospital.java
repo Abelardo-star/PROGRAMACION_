@@ -83,4 +83,3 @@ public class Hospital {
         return this.Nombre + " (" + this.cif + ") - " + this.direccion;
     }
 }
-

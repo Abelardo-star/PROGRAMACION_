@@ -32,7 +32,7 @@ public class Areas {
         return numMedicos;
     }
 
- //SET
+    //SET
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
