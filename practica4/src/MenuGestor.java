@@ -95,8 +95,8 @@ public class MenuGestor {
         System.out.print("Planta: ");
         int planta = sc.nextInt();
         sc.nextLine();
-        System.out.print("CIF del hospital: ");
-        String cif = sc.nextLine();
+        System.out.print("CIF del hospital:");
+        String cif = sc.nextLine().trim();
 
         Hospital h = Main.buscarHospital(cif);
         if (h == null) {
@@ -213,6 +213,7 @@ public class MenuGestor {
             System.out.print("Calle nueva: ");
             String calle = sc.nextLine();
             h.getDireccion().setCalle(calle);
+            System.out.print("Calle cambiada a: " + calle );
         }
     }
 
@@ -221,7 +222,7 @@ public class MenuGestor {
     private static void calcularAntiguedad() {
         Medico m = pedirMedico();
         if (m != null)
-            System.out.println("Años de antigüedad: " + m.getAniosAntiguedad());
+            System.out.println("Dias de antigüedad: " + m.getAniosAntiguedad());
     }
 
     private static void calcularSueldoNeto() {
