@@ -88,6 +88,8 @@ public class MenuGestor {
     }
 
     private static void crearArea() {
+        System.out.print("CIF del hospital:");
+        String cif = sc.nextLine();
         System.out.print("ID del área: ");
         String id = sc.nextLine();
         System.out.print("Nombre: ");
@@ -95,8 +97,6 @@ public class MenuGestor {
         System.out.print("Planta: ");
         int planta = sc.nextInt();
         sc.nextLine();
-        System.out.print("CIF del hospital:");
-        String cif = sc.nextLine().trim();
 
         Hospital h = Main.buscarHospital(cif);
         if (h == null) {

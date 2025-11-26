@@ -85,7 +85,7 @@ public class Main {
 
         for (Hospital h : hospitales) {
             // Compara el CIF del hospital con el ingresado por el usuario
-            if (h.getCif() != null && h.getCif().trim().equalsIgnoreCase(cif.trim())) {
+            if (h.getCif() != null && h.getCif().equalsIgnoreCase(cif)) {
                 return h;
             }
         }
