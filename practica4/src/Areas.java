@@ -61,9 +61,13 @@ public class Areas {
     }
     //COMPARAR MEDICOS CON OTRAS AREAS
     public String compararMedicos(Areas otraArea) {
-        if (this.numMedicos > otraArea.getNumMedicos()) return this.nombre + " tiene más médicos";
-        else if (this.numMedicos < otraArea.getNumMedicos()) return otraArea.getNombre() + " tiene más médicos";
-        else return "Ambas áreas tienen el mismo número de médicos";
+        if (this.numMedicos > otraArea.getNumMedicos()) {
+            return this.nombre + " tiene más médicos";
+        } else if (this.numMedicos < otraArea.getNumMedicos()) {
+            return otraArea.getNombre() + " tiene más médicos";
+        } else {
+            return "Ambas áreas tienen el mismo número de médicos";
+        }
     }
 
     //CAPACIDAD RESTANTE
