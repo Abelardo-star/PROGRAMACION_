@@ -1,7 +1,20 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuGestor {
+    private ArrayList<Hospital> hospitales;
+    private ArrayList<Areas> areas;
+    private ArrayList<Medico> medicos;
+    private ArrayList<Contrato> contratos;
 
+
+    public MenuGestor(ArrayList<Hospital> hospitales, ArrayList<Areas> areas,
+                      ArrayList<Medico> medicos, ArrayList<Contrato> contratos) {
+        this.hospitales = hospitales;
+        this.areas = areas;
+        this.medicos = medicos;
+        this.contratos = contratos;
+    }
     private static Scanner sc = new Scanner(System.in);
 
     public static void ejecutarMenuPrincipal() {
@@ -12,6 +25,7 @@ public class MenuGestor {
             System.out.println("\n===== MENU PRINCIPAL =====");
             System.out.println("1. Crear Hospital");
             System.out.println("2. Crear Área");
+            System.out.println("3. Crear Médico y Registrar Contrato");
             System.out.println("4. Modificar Médico");
             System.out.println("5. Modificar Hospital");
             System.out.println("6. Calcular Antigüedad");
@@ -74,6 +88,8 @@ public class MenuGestor {
     }
 
     private static void crearArea() {
+        System.out.print("CIF del hospital:");
+        String cif = sc.nextLine();
         System.out.print("ID del área: ");
         String id = sc.nextLine();
         System.out.print("Nombre: ");
@@ -197,6 +213,7 @@ public class MenuGestor {
             System.out.print("Calle nueva: ");
             String calle = sc.nextLine();
             h.getDireccion().setCalle(calle);
+            System.out.print("Calle cambiada a: " + calle );
         }
     }
 
@@ -205,6 +222,7 @@ public class MenuGestor {
     private static void calcularAntiguedad() {
         Medico m = pedirMedico();
         if (m != null)
+            System.out.println("Dias de antigüedad: " + m.getAniosAntiguedad());
     }
 
     private static void calcularSueldoNeto() {
@@ -284,4 +302,5 @@ public class MenuGestor {
         if (m == null) System.out.println("Médico no encontrado");
         return m;
     }
+
 }
