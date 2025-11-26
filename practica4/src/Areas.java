@@ -57,7 +57,7 @@ public class Areas {
 
     //DECREMENTAR MEDICOS
     public void decrementarMedicos() {
-        this.numMedicos=this.numMedicos-1;
+        this.numMedicos--;
     }
     //COMPARAR MEDICOS CON OTRAS AREAS
     public String compararMedicos(Areas otraArea) {
