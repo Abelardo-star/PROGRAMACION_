@@ -54,4 +54,3 @@ public class Contrato {
         return "Contrato: " + this.medico.getNombre() + " en " + this.hospital.getNombre() + " - " + this.fechaCreacion;
     }
 }
-
