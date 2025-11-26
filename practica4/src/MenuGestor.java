@@ -1,7 +1,20 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuGestor {
+    private ArrayList<Hospital> hospitales;
+    private ArrayList<Areas> areas;
+    private ArrayList<Medico> medicos;
+    private ArrayList<Contrato> contratos;
 
+
+    public MenuGestor(ArrayList<Hospital> hospitales, ArrayList<Areas> areas,
+                      ArrayList<Medico> medicos, ArrayList<Contrato> contratos) {
+        this.hospitales = hospitales;
+        this.areas = areas;
+        this.medicos = medicos;
+        this.contratos = contratos;
+    }
     private static Scanner sc = new Scanner(System.in);
 
     public static void ejecutarMenuPrincipal() {
@@ -288,4 +301,5 @@ public class MenuGestor {
         if (m == null) System.out.println("Médico no encontrado");
         return m;
     }
+
 }
