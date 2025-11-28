@@ -60,12 +60,27 @@ public class Hospital {
         return total;
     }
     //PROPORCION DE MEDICOS
-    public double getProporcionMedicosArea(String idArea){
-        Areas area = buscarArea(idArea);
-        if (area != null && getNumeroTotalMedicos()>0){
-            return (double) area.getNumMedicos() /getNumeroTotalMedicos();
+    public double getProporcionMedicosArea(String idArea) {
+
+        int totalMedicos = 0;
+        int medicosArea = 0;
+
+        // FOR 1 → recorrer todas las áreas del hospital
+        for (int i = 0; i < areas.size(); i++) {
+
+            Areas a = areas.get(i);
+            totalMedicos += a.getNumMedicos();
+
+            // FOR 2 ANIDADO → buscar coincidencia del ID
+            if (a.getIdentificador().equalsIgnoreCase(idArea)) {
+                medicosArea = a.getNumMedicos();
+            }
         }
-        return 0;
+
+        // Evitar división entre 0
+        if (totalMedicos == 0) return 0;
+
+        return (double) medicosArea / totalMedicos;
     }
     //EXISTE AREA POR ID
     public boolean existeArea(String idArea) {

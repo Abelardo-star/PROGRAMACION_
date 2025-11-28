@@ -246,17 +246,29 @@ public class MenuGestor {
     }
 
     private static void proporcionMedicos() {
+
         System.out.print("CIF hospital: ");
         String cif = sc.nextLine();
+
+        Hospital h = Main.buscarHospital(cif);
+
+        if (h == null) {
+            System.out.println("Hospital no encontrado.");
+            return;
+        }
+
         System.out.print("ID área: ");
         String id = sc.nextLine();
 
-        Hospital h = Main.buscarHospital(cif);
-        if (h != null) {
-            System.out.println("Proporción de médicos: " + h.getProporcionMedicosArea(id));
+        if (!h.existeArea(id)) {
+            System.out.println("El área no existe en ese hospital.");
+            return;
         }
-    }
 
+        double proporcion = h.getProporcionMedicosArea(id);
+
+        System.out.println("Proporción de médicos en el área: " + proporcion);
+    }
     private static void capacidadArea() {
         System.out.print("ID área: ");
         String id = sc.nextLine();
