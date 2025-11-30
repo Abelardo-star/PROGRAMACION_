@@ -38,18 +38,12 @@ public class Contrato {
 
     //COMPROBACION DE AÑO
     public boolean esDeAnio(int anio) {
-        if (fechaCreacion == anio) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.fechaCreacion == anio;
     }
-
-    //CALCULO DE VIGENCIA
-    public int diasDesdeCreacion(int fechaHoyAnio, int fechaCreacionAnio){
-        return 365 * (fechaCreacionAnio - fechaHoyAnio);
+    // CALCULO DE VIGENCIA EN AÑOS
+    public int aniosDesdeCreacion(int anioActual) {
+        return anioActual - this.fechaCreacion;
     }
-
     public String toString() {
         return "Contrato: " + this.medico.getNombre() + " en " + this.hospital.getNombre() + " - " + this.fechaCreacion;
     }

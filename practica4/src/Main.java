@@ -39,9 +39,10 @@ public class Main {
         areas.add(a2);
         areas.add(a3);
 
-        Medico m1 = new Medico("Ana", a1, "20502084E", 20, "Mujer", 20 - 2 - 2000, 3000.12);
-        Medico m2 = new Medico("Jose", a2, "20602084D", 25, "Hombre", 23 - 2 - 1995, 2000.12);
-        Medico m3 = new Medico("Marta", a3, "20305040A", 23, "Mujer", 20 - 2 - 1999, 1000.12);
+        Medico m1 = new Medico("Ana", a1, "20502084E", 20, "Mujer", 20000220, 3000.12); // 20/02/2000
+        Medico m2 = new Medico("Jose", a2, "20602084D", 25, "Hombre", 19950423, 2000.12);
+        Medico m3 = new Medico("Marta", a3, "20305040A", 23, "Mujer", 19990720, 1000.12);
+
 
         medicos.add(m1);
         medicos.add(m2);
