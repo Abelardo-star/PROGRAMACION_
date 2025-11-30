@@ -133,12 +133,14 @@ public class MenuGestor {
         int anio = sc.nextInt();
         sc.nextLine();
 
-        int fecha_i = anio * 10000 + mes * 100 + dia;
+        // SOLO AÑO PARA EL CONTRATO
+        int fecha_i = anio;
 
         // Seleccionar área
         System.out.println("Selecciona el área del médico:");
         for (int i = 0; i < Main.areas.size(); i++) {
-            System.out.println(i + ": " + Main.areas.get(i).getNombre() + " (ID: " + Main.areas.get(i).getIdentificador() + ")");
+            System.out.println(i + ": " + Main.areas.get(i).getNombre() +
+                    " (ID: " + Main.areas.get(i).getIdentificador() + ")");
         }
         int indexArea = sc.nextInt();
         sc.nextLine();
@@ -158,7 +160,7 @@ public class MenuGestor {
         sc.nextLine();
         Hospital h = Main.hospitales.get(indexHospital);
 
-        // Crear contrato automáticamente
+        // Crear contrato usando SOLO EL AÑO
         Contrato c = new Contrato(fecha_i, m, h);
         Main.contratos.add(c);
         System.out.println("Contrato creado correctamente.");
@@ -222,7 +224,7 @@ public class MenuGestor {
     private static void calcularAntiguedad() {
         Medico m = pedirMedico();
         if (m != null)
-            System.out.println("Dias de antigüedad: " + m.getAniosAntiguedad());
+            System.out.println("Años de antigüedad: " + m.getAniosAntiguedad());
     }
 
     private static void calcularSueldoNeto() {

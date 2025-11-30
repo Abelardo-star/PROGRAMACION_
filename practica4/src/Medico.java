@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Medico {
     private String nombre;
     private Areas area;
@@ -93,9 +95,25 @@ public class Medico {
     }
 
     //CALCULAR ANTIGUEDAD
-    public int getAniosAntiguedad(){
-        return 2025-this.fecha_i;
+    public int getAniosAntiguedad() {
+        java.time.LocalDate hoy = java.time.LocalDate.now();
+
+        int anio = this.fecha_i / 10000;
+        int mes = (this.fecha_i % 10000) / 100;
+        int dia = this.fecha_i % 100;
+
+        LocalDate inicio = LocalDate.of(anio, mes, dia);
+
+        if (inicio.isAfter(hoy)) {
+            System.out.println("ERROR: La fecha de inicio es posterior a hoy");
+            return 0;
+        }
+
+        return java.time.Period.between(inicio, hoy).getYears();
     }
+
+
+
 
     //CALCULAR IMPUESTOS ANUALES
     public double calcularImpuestosAnuales(double tasaImpositiva) {
