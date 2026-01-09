@@ -20,7 +20,7 @@ public class Clase {
     public Map<String, Integer> getBonus() { return bonus; }
     public int getVidaMax() { return vidaMax; }
 
-    // Clases predefinidas
+    // Clases predefinidas para el juego
     public static final Map<String, Clase> CLASES = new HashMap<>();
     static {
         CLASES.put("Guerrero", new Clase("Guerrero", Map.of("fuerza", 3), 120));
