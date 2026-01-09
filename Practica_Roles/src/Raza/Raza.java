@@ -9,6 +9,7 @@ public class Raza {
     private int fuerza, inteligencia, destreza, vida;
     private String especialidad;
 
+    //CONSTRUCTOR
     public Raza(String nombre, int fuerza, int inteligencia, int destreza, int vida, String especialidad) {
         this.nombre = nombre;
         this.fuerza = fuerza;
@@ -26,10 +27,11 @@ public class Raza {
     public int getVida() { return vida; }
     public String getEspecialidad() { return especialidad; }
 
-    // Razas predefinidas
+    // Razas predefinidas para el juego
     public static final Raza HUMANO = new Raza("Humano", 5, 5, 5, 100, "Equilibrado");
     public static final Raza ELFO = new Raza("Elfo", 4, 6, 7, 90, "Agilidad");
     public static final Raza ENANO = new Raza("Enano", 7, 4, 4, 110, "Resistencia");
 
+    // Usa la lista de los tipos de las Razas para poder crear el personaje
     public static final List<Raza> RAZAS = Arrays.asList(HUMANO, ELFO, ENANO);
 }
