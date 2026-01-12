@@ -1,8 +1,24 @@
 package com.juego.habilidades;
 
-public class DanioCuerpo extends HabilidadBase{
+public class DanioCuerpo implements Habilidad {
 
-    public DanioCuerpo(){
-        super("Daño cuerpo a cuerpo",15,5);
+    private int usos = 5;
+    private int valor;
+
+    public DanioCuerpo(int valor){
+        this.valor = valor;
+    }
+
+    public String getNombre(){
+        return "Daño cuerpo a cuerpo ("+usos+" usos)";
+    }
+
+    public int usar(){
+        usos--;
+        return valor;
+    }
+
+    public boolean tieneUsos(){
+        return usos > 0;
     }
 }
