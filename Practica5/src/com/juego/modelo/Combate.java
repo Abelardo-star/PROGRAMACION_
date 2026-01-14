@@ -29,16 +29,22 @@ public class Combate {
 
             int v=h.usar();
 
-            if(h.getNombre().startsWith("Cura")){
+            if(h.getNombre().contains("Cura")){
                 t.curar(v);
                 System.out.println("Se cura "+v);
             }else{
                 r.danio(v);
-                System.out.println("Hace "+v+" de daño");
+                System.out.println("Hace "+v+" daño");
             }
 
-            System.out.println(a.getNombre()+": "+a.getVida());
-            System.out.println(b.getNombre()+": "+b.getVida());
+            //VIDA FORMATO ACTUAL
+            System.out.println(
+                    a.getNombre()+": "+
+                            a.getVida());
+
+            System.out.println(
+                    b.getNombre()+": "+
+                            b.getVida());
 
             Personaje aux=t; t=r; r=aux;
         }

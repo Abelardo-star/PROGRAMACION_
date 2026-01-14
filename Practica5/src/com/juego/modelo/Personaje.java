@@ -15,35 +15,32 @@ public class Personaje {
     public Personaje(String n,Raza r,Clase c){
 
         nombre=n;
-        stats=r.getStatsBase();
-        stats.sumar(c.f(),c.i(),c.d());
-        stats.vidaMax=c.vida();
-        vida=stats.vidaMax;
+        stats=new Stats(r.f(),r.i(),r.d(),r.vida());
+        stats.bonus(c.f(),c.i(),c.d());
 
+        vida=c.vida();
         habilidades=List.of(c.getHabilidades());
     }
 
-    public void danio(int d){
-        vida-=d; if(vida<0) vida=0;
-    }
-
-    public void curar(int c){
-        vida+=c;
-        if(vida>stats.vidaMax) vida=stats.vidaMax;
-    }
-
-    public int getVida(){
-        return vida;
-    }
     public String getNombre(){
         return nombre;
+    }
+    public int getVida(){
+        return vida;
     }
 
     public List<Habilidad> getHabilidades(){
         return habilidades;
     }
 
+    public void danio(int v){
+        vida-=v; if(vida<0) vida=0;
+    }
+    public void curar(int v){
+        vida+=v; if(vida>stats.getVidaMax()) vida=stats.getVidaMax();
+    }
+
     public String toString(){
-        return nombre+" F:"+stats.f+ " I:"+stats.i+" D:"+stats.d+ " HP:"+vida+"/"+stats.vidaMax;
+        return nombre+" HP:"+vida;
     }
 }
