@@ -4,13 +4,15 @@ public class DanioCuerpo implements Habilidad {
 
     private int usos = 5;
     private int valor;
+    private String nombre;
 
-    public DanioCuerpo(int valor){
+    public DanioCuerpo(String nombre,int valor){
+        this.nombre = nombre;
         this.valor = valor;
     }
 
     public String getNombre(){
-        return "Daño cuerpo a cuerpo ("+usos+" usos)";
+        return nombre+" ("+usos+" usos)";
     }
 
     public int usar(){
@@ -19,6 +21,6 @@ public class DanioCuerpo implements Habilidad {
     }
 
     public boolean tieneUsos(){
-        return usos > 0;
+        return usos>0;
     }
 }

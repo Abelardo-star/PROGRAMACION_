@@ -4,13 +4,15 @@ public class CuraCuerpo implements Habilidad {
 
     private int usos = 3;
     private int valor;
+    private String nombre;
 
-    public CuraCuerpo(int valor){
+    public CuraCuerpo(String nombre,int valor){
+        this.nombre = nombre;
         this.valor = valor;
     }
 
     public String getNombre(){
-        return "Cura cuerpo a cuerpo ("+usos+" usos)";
+        return nombre+" ("+usos+" usos)";
     }
 
     public int usar(){
@@ -19,6 +21,6 @@ public class CuraCuerpo implements Habilidad {
     }
 
     public boolean tieneUsos(){
-        return usos > 0;
+        return usos>0;
     }
 }

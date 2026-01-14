@@ -4,13 +4,15 @@ public class DanioDistancia implements Habilidad {
 
     private int usos = 1;
     private int valor;
+    private String nombre;
 
-    public DanioDistancia(int valor){
+    public DanioDistancia(String nombre,int valor){
+        this.nombre = nombre;
         this.valor = valor;
     }
 
     public String getNombre(){
-        return "Daño a distancia ("+usos+" usos)";
+        return nombre+" ("+usos+" usos)";
     }
 
     public int usar(){
@@ -19,6 +21,6 @@ public class DanioDistancia implements Habilidad {
     }
 
     public boolean tieneUsos(){
-        return usos > 0;
+        return usos>0;
     }
 }
