@@ -20,9 +20,9 @@ public class Paladin implements Clase{
 
     public Habilidad[] getHabilidades(){
         return new Habilidad[]{
-                new DanioCuerpo(18),   // Martillo sagrado
-                new CuraCuerpo(15),    // Luz divina
-                new DanioDistancia(10) // Juicio
+                new DanioCuerpo("Espada Sagrada",18),
+                new CuraCuerpo("Luz Divina",15),
+                new DanioDistancia("Juicio Celestial",10)
         };
     }
 }

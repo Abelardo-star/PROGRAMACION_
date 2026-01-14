@@ -21,9 +21,9 @@ public class Guerrero implements Clase{
 
     public Habilidad[] getHabilidades(){
         return new Habilidad[]{
-                new DanioCuerpo(25),
-                new CuraCuerpo(5),
-                new DanioDistancia(10)
+                new DanioCuerpo("Corte Brutal",25),
+                new CuraCuerpo("Grito de Guerra",5),
+                new DanioDistancia("Lanzamiento de hacha",10)
         };
     }
 }

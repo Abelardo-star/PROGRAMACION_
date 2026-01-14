@@ -21,9 +21,9 @@ public class Druida implements Clase{
 
     public Habilidad[] getHabilidades(){
         return new Habilidad[]{
-                new DanioCuerpo(10),
-                new CuraCuerpo(20),
-                new DanioDistancia(15)
+                new DanioCuerpo("Garra Salvaje",10),
+                new CuraCuerpo("Recrecimiento",20),
+                new DanioDistancia("Raíces Enredadoras",15)
         };
     }
 }

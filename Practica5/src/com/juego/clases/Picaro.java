@@ -20,9 +20,9 @@ public class Picaro implements Clase{
 
     public Habilidad[] getHabilidades(){
         return new Habilidad[]{
-                new DanioCuerpo(22),   // Puñalada
-                new CuraCuerpo(6),    // Vendaje rápido
-                new DanioDistancia(20) // Cuchillo arrojadizo
+                new DanioCuerpo("Puñalada",22),
+                new CuraCuerpo("Vendaje Rápido",6),
+                new DanioDistancia("Daga Arrojadiza",20)
         };
     }
 }

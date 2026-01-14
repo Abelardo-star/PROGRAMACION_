@@ -20,9 +20,9 @@ public class Monje implements Clase{
 
     public Habilidad[] getHabilidades(){
         return new Habilidad[]{
-                new DanioCuerpo(17),   // Puño del dragón
-                new CuraCuerpo(8),    // Meditación
-                new DanioDistancia(18) // Onda de chi
+                new DanioCuerpo("Puño del Dragón",17),
+                new CuraCuerpo("Meditación",8),
+                new DanioDistancia("Onda de Chi",18)
         };
     }
 }
