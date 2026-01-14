@@ -1,11 +1,19 @@
 package com.juego.razas;
-import com.juego.modelo.Stats;
 
 public class Elfo implements Raza{
     public String getNombre(){
         return "Elfo";
     }
-    public Stats getStatsBase(){
-        return new Stats(4,6,7,90);
+    public int f(){
+        return 4;
+    }
+    public int i(){
+        return 6;
+    }
+    public int d(){
+        return 7;
+    }
+    public int vida(){
+        return 90;
     }
 }

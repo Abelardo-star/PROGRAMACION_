@@ -1,11 +1,19 @@
 package com.juego.razas;
-import com.juego.modelo.Stats;
 
 public class Humano implements Raza{
     public String getNombre(){
         return "Humano";
     }
-    public Stats getStatsBase(){
-        return new Stats(5,5,5,100);
+    public int f(){
+        return 5;
+    }
+    public int i(){
+        return 5;
+    }
+    public int d(){
+        return 5;
+    }
+    public int vida(){
+        return 100;
     }
 }
