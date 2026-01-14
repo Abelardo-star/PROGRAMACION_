@@ -5,51 +5,57 @@ import com.juego.habilidades.*;
 
 public class Combate {
 
-    Scanner sc=new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
 
-    public void iniciar(Personaje a,Personaje b){
+    public void iniciar(Personaje a, Personaje b) {
 
-        Personaje t=a, r=b;
+        Personaje t = a;
+        Personaje r = b;
 
-        while(a.getVida()>0 && b.getVida()>0){
+        while (a.getVida() > 0 && b.getVida() > 0) {
 
-            System.out.println("\nTurno: "+t.getNombre());
+            System.out.println("\nTurno: " + t.getNombre());
 
-            int i=1;
-            for(Habilidad h:t.getHabilidades())
-                System.out.println(i+++". "+h.getNombre());
+            // Mostrar habilidades
+            int i = 1;
+            for (Habilidad h : t.getHabilidades()) {
+                System.out.println(i++ + ". " + h.getNombre());
+            }
 
-            int op=sc.nextInt()-1;
-            Habilidad h=t.getHabilidades().get(op);
-
-            if(!h.tieneUsos()){
-                System.out.println("Sin usos!");
+            int op = sc.nextInt() - 1;
+            if (op < 0 || op >= t.getHabilidades().size()) {
+                System.out.println("Opción inválida, elige otra habilidad.");
                 continue;
             }
 
-            int v=h.usar();
+            Habilidad h = t.getHabilidades().get(op);
 
-            if(h.getNombre().contains("Cura")){
-                t.curar(v);
-                System.out.println("Se cura "+v);
-            }else{
-                r.danio(v);
-                System.out.println("Hace "+v+" daño");
+            if (!h.tieneUsos()) {
+                System.out.println("Sin usos! Elige otra habilidad.");
+                continue; // Mantiene el turno hasta que elija una habilidad válida
             }
 
-            //VIDA FORMATO ACTUAL
-            System.out.println(
-                    a.getNombre()+": "+
-                            a.getVida());
+            int v = h.usar();
 
-            System.out.println(
-                    b.getNombre()+": "+
-                            b.getVida());
+            // Aplicar efecto según el tipo de habilidad
+            if (h instanceof CuraCuerpo) {
+                t.curar(v);
+                System.out.println(t.getNombre() + " se cura " + v + " HP");
+            } else {
+                r.danio(v);
+                System.out.println(t.getNombre() + " hace " + v + " de daño a " + r.getNombre());
+            }
 
-            Personaje aux=t; t=r; r=aux;
+            // Mostrar estado de ambos personajes
+            System.out.println(a.getNombre() + ": " + a.getVida() + " HP");
+            System.out.println(b.getNombre() + ": " + b.getVida() + " HP");
+
+            // Cambiar turno
+            Personaje aux = t;
+            t = r;
+            r = aux;
         }
 
-        System.out.println("\nGANADOR: "+
-                (a.getVida()>0?a.getNombre():b.getNombre()));
+        System.out.println("\nGANADOR: " + (a.getVida() > 0 ? a.getNombre() : b.getNombre()));
     }
 }
