@@ -2,28 +2,40 @@ package com.juego.clases;
 
 import com.juego.habilidades.*;
 
-public class Guerrero implements Clase{
+// Clase que representa la clase Guerrero
+public class Guerrero implements Clase {
 
-    public String getNombre(){return "Guerrero";}
+    // Devuelve el nombre de la clase
+    public String getNombre() {
+        return "Guerrero";
+    }
 
-    public int f(){
+    // Bonus de fuerza que otorga la clase
+    public int f() {
         return 3;
     }
-    public int i(){
+
+    // Bonus de inteligencia que otorga la clase
+    public int i() {
         return 0;
     }
-    public int d(){
+
+    // Bonus de destreza que otorga la clase
+    public int d() {
         return 0;
     }
-    public int vida(){
+
+    // Vida base que otorga la clase
+    public int vida() {
         return 120;
     }
 
-    public Habilidad[] getHabilidades(){
+    // Devuelve las habilidades que posee la clase Guerrero
+    public Habilidad[] getHabilidades() {
         return new Habilidad[]{
-                new DanioCuerpo("Corte Brutal",25),
-                new CuraCuerpo("Grito de Guerra",5),
-                new DanioDistancia("Lanzamiento de hacha",10)
+                new DanioCuerpo("Embate del Coloso", 25),       // Daño cuerpo a cuerpo
+                new CuraCuerpo("Grito de Guerra", 5),      // Habilidad de curación pequeña
+                new DanioDistancia("Rompefilas", 10) // Daño a distancia
         };
     }
 }
