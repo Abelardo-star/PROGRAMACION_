@@ -75,4 +75,40 @@
     │       ├── 📄 Main.java
     ├── ⚙️ .gitignore
     └── 📘 README.md
+└── 🌿 Practica5
+    ├── 📁 Practica5
+    │   └── 📁 src
+    │    |    └── 📁 com.juegos
+    |    |        └── 📁 clases
+    │    |        |    ├── 📄 Clase.java
+    │    |        |    ├── 📄 Bardo.java
+    │    |        |    ├── 📄 Mago.java
+    │    |        |    ├── 📄 Guerrero.java
+    │    |        |    ├── 📄 Picaro.java
+    │    |        |    ├── 📄 Druida.java
+    │    |        |    ├── 📄 Sacerdote.java
+    │    |        |    ├── 📄 Monje.java
+    │    |        |    ├── 📄 Paladin.java
+    |    |        └── 📁 habilidades
+    │    |        |    ├── 📄 Habilidad.java
+    │    |        |    ├── 📄 DanioCuerpo.java
+    │    |        |    ├── 📄 CueraCuerpo.java
+    │    |        |    ├── 📄 DanioDistancia.java
+    |    |        └── 📁 modelo
+    │    |        |    ├── 📄 Combate.java
+    │    |        |    ├── 📄 GestorPersoanje.java
+    │    |        |    ├── 📄 PrecargaDatos.java
+    │    |        |    ├── 📄 Personaje.java
+    │    |        |    ├── 📄 Stats.java
+    |    |        └── 📁 presentacion
+    │    |        |    ├── 📄 Presentador.java
+    │    |        |    ├── 📄 Vista.java
+    |    |        └── 📁 razas
+    │    |             ├── 📄 Elfo.java
+    │    |             ├── 📄 Enano.java
+    │    |             ├── 📄 Humano.java
+    │    |             ├── 📄 Raza.java
+    │    ├── 📄 Main.java
+    ├── ⚙️ .gitignore
+    └── 📘 README.md
 
