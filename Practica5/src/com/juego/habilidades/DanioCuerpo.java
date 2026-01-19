@@ -33,4 +33,8 @@ public class DanioCuerpo implements Habilidad {
     public boolean tieneUsos(){
         return usos > 0;
     }
+    @Override
+    public int getUsosRestantes() {
+        return usos;
+    }
 }

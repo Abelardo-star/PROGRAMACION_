@@ -13,24 +13,30 @@ public class CuraCuerpo implements Habilidad {
     private String nombre;
 
     // Constructor: recibe el nombre de la habilidad y el valor de curación
-    public CuraCuerpo(String nombre, int valor){
+    public CuraCuerpo(String nombre, int valor) {
         this.nombre = nombre;
         this.valor = valor;
     }
 
     // Devuelve el nombre de la habilidad junto con los usos restantes
-    public String getNombre(){
+    public String getNombre() {
         return nombre + " (" + usos + " usos)";
     }
 
     // Usa la habilidad: decrementa los usos y devuelve el valor de curación
-    public int usar(){
+    public int usar() {
         usos--;           // Resta un uso
         return valor;     // Devuelve la cantidad de vida que se curará
     }
 
     // Indica si la habilidad aún tiene usos disponibles
-    public boolean tieneUsos(){
+    public boolean tieneUsos() {
         return usos > 0;
     }
+
+    @Override
+    public int getUsosRestantes() {
+        return usos;
+    }
 }
+
