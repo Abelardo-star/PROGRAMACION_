@@ -1,27 +1,46 @@
 package com.juego.razas;
 
-// Clase que representa la raza Enano e implementa la interfaz Raza
-public class Enano implements Raza{
+// La clase Enano representa una raza concreta del juego
+// Implementa la interfaz Raza, definiendo los atributos propios de un enano
+public class Enano implements Raza {
 
-    // Devuelve el nombre de la raza
-    public String getNombre(){
-        return "Enano";
+    // Nombre del personaje
+    private String nombre;
+
+    // Atributos principales de la raza:
+    // f = fuerza, i = inteligencia, d = destreza, vida = puntos de vida iniciales
+    private int f, i, d, vida;
+
+    // CONSTRUCTOR
+    // Permite crear un Enano con nombre y atributos específicos
+    public Enano(String nombre, int f, int i, int d, int vida) {
+        this.nombre = nombre;
+        this.f = f;
+        this.i = i;
+        this.d = d;
+        this.vida = vida;
     }
 
-    // Retorna el valor de fuerza base de la raza
-    public int f(){
-        return 7;
+    // MÉTODOS GETTERS
+    // Devuelven los valores de cada atributo
+
+    public String getNombre() {
+        return nombre;
     }
-    // Retorna el valor de la inteligencia base de la raza
+
+    public int f() {
+        return f;
+    }
+
     public int i() {
-        return 4;
+        return i;
     }
-    // Retorna el valor de la destreza base de la raza
-    public int d(){
-        return 4;
+
+    public int d() {
+        return d;
     }
-    // Retorna la vida base de la raza
-    public int vida(){
-        return 110;
+
+    public int vida() {
+        return vida;
     }
 }
