@@ -5,4 +5,6 @@ public interface Habilidad {
     String getNombre();
     int usar();
     boolean tieneUsos();
+
+     int getUsosRestantes();
 }
