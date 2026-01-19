@@ -2,40 +2,57 @@ package com.juego.clases;
 
 import com.juego.habilidades.*;
 
-// Clase que representa la clase Paladín
+// Clase que representa la clase Paladin
+// Define los atributos de la clase y sus habilidades
 public class Paladin implements Clase {
 
-    // Devuelve el nombre de la clase
+    // Nombres de las habilidades
+    private String nombre_ataque;
+    private String nombre_cura;
+    private String nombre_distancia;
+
+    // Valores de las habilidades
+    private int ataque_valor;
+    private int cura_valor;
+    private int distancia_valor;
+
+    // Constructor: asigna habilidades y valores
+    public Paladin(
+            String nombre_ataque,int ataque_valor,
+            String nombre_cura,int cura_valor,
+            String nombre_distancia,int distancia_valor
+    ){
+        this.nombre_ataque = nombre_ataque;
+        this.ataque_valor = ataque_valor;
+        this.nombre_cura = nombre_cura;
+        this.cura_valor = cura_valor;
+        this.nombre_distancia = nombre_distancia;
+        this.distancia_valor = distancia_valor;
+    }
+
     public String getNombre(){
         return "Paladin";
     }
-
-    // Bonus de fuerza que otorga la clase
     public int f(){
         return 2;
     }
-
-    // Bonus de inteligencia que otorga la clase
     public int i(){
         return 1;
     }
-
-    // Bonus de destreza que otorga la clase
     public int d(){
         return 0;
     }
-
-    // Vida base que otorga la clase
     public int vida(){
         return 115;
     }
 
-    // Devuelve las habilidades que posee la clase Paladín
+
+    // Devuelve un arreglo con las habilidades de la clase
     public Habilidad[] getHabilidades(){
         return new Habilidad[]{
-                new DanioCuerpo("Excalibur", 18),   // Daño cuerpo a cuerpo
-                new CuraCuerpo("Luz Divina", 15),        // Habilidad de curación
-                new DanioDistancia("Juicio Celestial", 10) // Daño a distancia
+                new DanioCuerpo(nombre_ataque,ataque_valor),
+                new CuraCuerpo(nombre_cura,cura_valor),
+                new DanioDistancia(nombre_distancia, distancia_valor)
         };
     }
 }
