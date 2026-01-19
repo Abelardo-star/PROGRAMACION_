@@ -1,26 +1,54 @@
 package com.juego.razas;
 
-// Clase que representa la raza Humano e implementa la interfaz Raza
-public class Humano implements Raza{
+// La clase Humano representa una raza concreta del juego
+// Implementa la interfaz Raza, que define los atributos básicos de cualquier raza
+public class Humano implements Raza {
 
-    // Devuelve el nombre de la raza
-    public String getNombre(){
-        return "Humano";
+    // Nombre del personaje (o de la raza)
+    private String nombre;
+
+    // Atributos principales de la raza:
+    // f = fuerza
+    // i = inteligencia
+    // d = destreza
+    // vida = puntos de vida iniciales
+    private int f, i, d, vida;
+
+    // CONSTRUCTOR
+    // Permite crear un Humano asignando nombre y atributos
+    public Humano(String nombre, int f, int i, int d, int vida) {
+        this.nombre = nombre;
+        this.f = f;
+        this.i = i;
+        this.d = d;
+        this.vida = vida;
     }
-    // Retorna el valor de fuerza base de la raza
-    public int f(){
-        return 5;
+
+    // MÉTODOS GETTERS
+    // Devuelven los valores de cada atributo
+
+    // Nombre del personaje
+    public String getNombre() {
+        return nombre;
     }
-    // Retorna el valor de la inteligencia base de la raza
-    public int i(){
-        return 5;
+
+    // Fuerza
+    public int f() {
+        return f;
     }
-    // Retorna el valor de la destreza base de la raza
-    public int d(){
-        return 5;
+
+    // Inteligencia
+    public int i() {
+        return i;
     }
-    // Retorna la vida base de la raza
-    public int vida(){
-        return 100;
+
+    // Destreza
+    public int d() {
+        return d;
+    }
+
+    // Vida inicial
+    public int vida() {
+        return vida;
     }
 }
