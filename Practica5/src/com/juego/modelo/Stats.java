@@ -1,3 +1,4 @@
+
 package com.juego.modelo;
 
 // Clase que representa las estadísticas base de un personaje

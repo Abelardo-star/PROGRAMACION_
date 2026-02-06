@@ -1,3 +1,4 @@
+
 package com.juego.modelo;
 
 import com.juego.razas.*;
@@ -30,49 +31,49 @@ public class PrecargaDatos {
     // Métodos para crear clases y asignar habilidades
     public static Clase crearGuerrero() {
         return new Guerrero("Corte Brutal", 25,
-                            "Grito de Guerra", 5,
-                            "Lanzamiento de hacha", 10);
+                "Grito de Guerra", 5,
+                "Lanzamiento de hacha", 10);
     }
 
     public static Clase crearPaladin() {
         return new Paladin("Espada Sagrada", 18,
-                           "Luz Divina", 15,
-                           "Juicio Celestial", 10);
+                "Luz Divina", 15,
+                "Juicio Celestial", 10);
     }
 
     public static Clase crearMonje() {
         return new Monje("Puño del Dragón", 17,
-                         "Meditación", 8,
-                         "Onda Chi", 18);
+                "Meditación", 8,
+                "Onda Chi", 18);
     }
 
     public static Clase crearPicaro() {
         return new Picaro("Puñalada", 22,
-                          "Vendaje Rápido", 6,
-                          "Daga Arrojadiza", 20);
+                "Vendaje Rápido", 6,
+                "Daga Arrojadiza", 20);
     }
 
     public static Clase crearDruida() {
         return new Druida("Garra Salvaje", 10,
-                          "Recrecimiento", 20,
-                          "Raíces Enredadoras", 15);
+                "Recrecimiento", 20,
+                "Raíces Enredadoras", 15);
     }
 
     public static Clase crearSacerdote() {
         return new Sacerdote("Golpe Bendito", 8,
-                             "Sanación Mayor", 25,
-                             "Luz Castigadora", 12);
+                "Sanación Mayor", 25,
+                "Luz Castigadora", 12);
     }
 
     public static Clase crearMago() {
         return new Mago("Bastón Arcano", 5,
-                        "Escudo Mágico", 5,
-                        "Bola de Fuego", 40);
+                "Escudo Mágico", 5,
+                "Bola de Fuego", 40);
     }
 
     public static Clase crearBardo() {
         return new Bardo("Golpe Rítmico", 10,
-                         "Canción Curativa", 14,
-                         "Nota Letal", 18);
+                "Canción Curativa", 14,
+                "Nota Letal", 18);
     }
 }

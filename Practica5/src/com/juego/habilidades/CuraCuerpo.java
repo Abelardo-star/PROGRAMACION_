@@ -1,3 +1,4 @@
+
 package com.juego.habilidades;
 
 // Clase que representa una habilidad de curación para el cuerpo
@@ -39,4 +40,3 @@ public class CuraCuerpo implements Habilidad {
         return usos;
     }
 }
-

@@ -1,3 +1,4 @@
+
 package com.juego.habilidades;
 
 public interface Habilidad {
@@ -6,5 +7,5 @@ public interface Habilidad {
     int usar();
     boolean tieneUsos();
 
-     int getUsosRestantes();
+    int getUsosRestantes();
 }
