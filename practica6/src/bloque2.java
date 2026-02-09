@@ -69,7 +69,7 @@ public class bloque2 {
         for (Map.Entry<String, ArrayList<String>> entry : gremios.entrySet()) {
             ArrayList<String> miembros = entry.getValue();
             if (miembros.contains(traidor)) {
-                System.out.println("¡Traidor " + traidor + " encontrado en el gremio " + entry.getKey() + "!");
+                System.out.println("¡Traidor " + traidor + " encontrado en el gremio " +  "!");
                 miembros.remove(traidor);
                 System.out.println("Traidor eliminado. Miembros restantes: " + miembros);
                 return; // Asumimos que solo está en un gremio
