@@ -20,7 +20,7 @@ public class bloque2 {
         gremios.put("Guerreros", guerreros);
         gremios.put("Magos", magos);
 
-        imprimirMiembrosGremio(gremios, "Magos");
+        VerMiembrosGremio(gremios, "Magos");
 
         // 8. El Sistema de Loot (Botín)
         System.out.println("\n Ejercicio 8: El Sistema de Loot ");
@@ -54,27 +54,27 @@ public class bloque2 {
 
         // 10. El Buscador de Traidores
         System.out.println("\n Ejercicio 10: El Buscador de Traidores ");
-        buscarYEliminarTraidor(gremios, "Judas");
+        BuscaYquitaTraidor(gremios, "Judas");
     }
 
-    private static void imprimirMiembrosGremio(HashMap<String, ArrayList<String>> gremios, String nombreGremio) {
+    private static void VerMiembrosGremio(HashMap<String, ArrayList<String>> gremios, String nombreGremio) {
         if (gremios.containsKey(nombreGremio)) {
             System.out.println("Miembros de " + nombreGremio + ": " + gremios.get(nombreGremio));
         } else {
-            System.out.println("Gremio no encontrado.");
+            System.out.println("Gremio no registrado.");
         }
     }
 
-    private static void buscarYEliminarTraidor(HashMap<String, ArrayList<String>> gremios, String traidor) {
+    private static void BuscaYquitaTraidor(HashMap<String, ArrayList<String>> gremios, String traidor) {
         for (Map.Entry<String, ArrayList<String>> entry : gremios.entrySet()) {
             ArrayList<String> miembros = entry.getValue();
             if (miembros.contains(traidor)) {
-                System.out.println("¡Traidor " + traidor + " encontrado en el gremio " +  "!");
+                System.out.println("¡Traidor " + traidor + " ha sido encontrado en el gremio de los  " + entry.getKey() + "!");
                 miembros.remove(traidor);
-                System.out.println("Traidor eliminado. Miembros restantes: " + miembros);
-                return; // Asumimos que solo está en un gremio
+                System.out.println("Traidor desterrado del gremio. Miembros restantes: " + miembros);
+                return;
             }
         }
-        System.out.println("Traidor no encontrado.");
+        System.out.println("Traidor no registrado.");
     }
 }
