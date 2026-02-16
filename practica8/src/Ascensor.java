@@ -5,8 +5,8 @@ public class Ascensor extends Maquinaria{
     private int id_ascensor;
     private HashSet<String> registroAceso;
 
-    public Ascensor(boolean vip, int id_ascensor,String nombre, String funcion){
-        super(funcion, nombre);
+    public Ascensor(boolean vip, int id_ascensor,String nombre, boolean requiereBiometria){
+        super(nombre, requiereBiometria);
         this.id_ascensor=id_ascensor;
         this.vip=vip;
         this.registroAceso=new HashSet<>();
