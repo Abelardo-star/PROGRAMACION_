@@ -2,6 +2,7 @@ package com.rpg.utils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.rpg.model.item;
+import com.rpg.model.personaje;
 
 
 import java.io.FileNotFoundException;
@@ -19,8 +20,7 @@ public class JsonHelper {
         try {
             FileReader reader = new FileReader("practica7/ficheros/item.json");
             Gson g = new Gson();
-            List<item> lista = g.fromJson(reader, new TypeToken<List<item>>() {
-            }.getType());
+            List<item> lista = g.fromJson(reader, new TypeToken<List<item>>() {}.getType());
 
             for (item t : lista) {
                 System.out.println(t.getNombre());
@@ -29,6 +29,23 @@ public class JsonHelper {
             throw new RuntimeException(e);
         }
         return listaItem;
+    }
+    public static List<personaje> leerPersonaje() {
+
+        List<personaje> listaPersonaje = new ArrayList<>();
+
+        try {
+            FileReader reader = new FileReader("practica7/ficheros/personaje.json");
+            Gson g = new Gson();
+            List<personaje> lista = g.fromJson(reader, new TypeToken<List<personaje>>() {}.getType());
+
+            for (personaje p : lista) {
+                System.out.println(p.getNombre());
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return listaPersonaje;
     }
 }
 
