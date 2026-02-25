@@ -1,0 +1,4 @@
+Vallebruma;20000;Soleado;3
+Ventormenta;5000;Nublado;8
+Khazad-dûm;2000;Lluvioso;10
+Arkham;10000;Soleado;9

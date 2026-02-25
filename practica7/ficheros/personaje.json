@@ -1,0 +1,14 @@
+[
+  {
+    "nombre": "Licurgo",
+    "raza": "Elfo",
+    "nivel": 10,
+    "equipoIds": ["W01"]
+  },
+  {
+    "nombre": "Lucius",
+    "raza": "Humano",
+    "nivel": 20,
+    "equipoIds": ["P01"]
+  }
+]
