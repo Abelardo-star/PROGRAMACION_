@@ -7,13 +7,15 @@ public class cuidades {
     private String clima;
     private Integer riesgo;
 
-    public cuidades(String nombre, String clima, Integer poblacion, Integer riesgo){
+    public cuidades(String nombre,  Integer poblacion, String clima, Integer riesgo){
 
         this.clima=clima;
         this.nombre=nombre;
         this.poblacion=poblacion;
         this.riesgo=riesgo;
     }
+
+
     //GET
     public String getNombre() {
         return nombre;
