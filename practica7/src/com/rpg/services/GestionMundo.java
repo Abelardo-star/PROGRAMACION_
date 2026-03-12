@@ -1,6 +1,7 @@
 package com.rpg.services;
 
 import com.rpg.handler.DatoInvalidoException;
+import com.rpg.handler.FormatoInvalidoException;
 import com.rpg.handler.RPGDataException;
 import com.rpg.handler.RecursoNoEncontradoException;
 import com.rpg.model.cuidades;
@@ -8,6 +9,7 @@ import com.rpg.model.item;
 import com.rpg.model.personaje;
 import com.rpg.utils.JsonHelper;
 import com.rpg.utils.TxtHelper;
+import com.rpg.utils.LoggerCustom;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +19,7 @@ import java.util.Map;
 public class GestionMundo {
 
     //lista para recorrer todas las clases
-    private List<cuidades> ciudades;
+    private List<cuidades>  ciudades;
     private List<personaje> personajes;
     private List<item> objetos;
 
@@ -33,29 +35,37 @@ public class GestionMundo {
     }
 
     //Carga de Datos
-    public void cargardatos(){
+    public void cargardatos() throws FormatoInvalidoException {
 
-        System.out.println("Obteniendo ciudades");
-        ciudades = TxtHelper.leerciudades();
+        try {
 
-        System.out.println("Obteniendo objetos");
-        objetos = JsonHelper.leerItem();
+            System.out.println("Ciudades:");
+            ciudades = TxtHelper.leerciudades();
 
-        System.out.println("Obteniendo personajes");
-        personajes = JsonHelper.leerPersonaje();
+            System.out.println("Personajes:");
+            personajes = JsonHelper.leerPersonaje();
 
-        //guardamos el id y el valor dentro de un foreach de los objetos
-        for (item i : objetos) {
-            mobjetos.put(i.getId(), i);
+            System.out.println("Objetos:");
+            objetos = JsonHelper.leerItem();
+
+            for (item t : objetos) {
+                mobjetos.put(t.getId(), t);
+            }
+
+            System.out.println("Objetos: " + mobjetos.size());
+
+        } catch (FormatoInvalidoException e) {
+
+            LoggerCustom.Error("Error cargando datos: " + e.getMessage());
+            throw e;
         }
-        System.out.println("Objetos obtenidos: " + mobjetos.size());
     }
 
 
 
     //Crear Personaje
     public void crearPersonaje(String nombre, String raza, int nivel, List<String> idsItem)  throws RecursoNoEncontradoException, DatoInvalidoException {
-        System.out.println("Creando personaje");
+        System.out.println("Creando personaje:");
 
         //personaje nuevo
         personaje nuevo = new personaje(nombre, raza, nivel);
@@ -65,6 +75,7 @@ public class GestionMundo {
 
         //If para ver si el nivel es negativo utilizando una excepcion
         if (nivel < 0) {
+            LoggerCustom.Error("El nivel no puede ser inferior a 0");
             throw new DatoInvalidoException("El nivel no puede ser inferior a 0");
         }
 
@@ -76,6 +87,7 @@ public class GestionMundo {
             if (item != null) {
                 equipo.add(item);
             } else {
+                LoggerCustom.Error("Objeto no existente: " + id);
                 throw new RecursoNoEncontradoException("Objeto no existente: " + id);
             }
 
@@ -83,19 +95,20 @@ public class GestionMundo {
         //ahora se asigna al personaje nuevo los objetos y se añade a la lista
         personajes.add(nuevo);
         nuevo.setEquipo(equipo);
-        System.out.println("Personaje nuevo: " + nombre);
+        System.out.println("Personaje nuevo:\n" + nombre);
     }
 
      public void verPersonajeyObjetos(){
-        System.out.println("Obteniendo personaje y objetos");
+        System.out.println("Obteniendo personaje y objetos:");
         for (personaje p : personajes) {
             System.out.println("Personajes: " + p.getNombre());
-            for (item i : objetos) {
-                System.out.println("Objetos " + i.getNombre() + " " + i.getId());
+            for (item t : objetos) {
+                System.out.println("Objetos:\n " + t.getNombre() + " con el id: " + t.getId());
             }
         }
     }
 
     //NO SE COMO SEGUIR
 }
+
 
