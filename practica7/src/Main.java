@@ -16,5 +16,7 @@ public class Main {
 
         mundo.verPersonajeyObjetos();
 
+        mundo.guardarCambios();
+
     }
 }
