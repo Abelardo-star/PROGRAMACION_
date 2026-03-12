@@ -13,10 +13,12 @@ public class LoggerCustom {
         try{
             FileWriter fw = new FileWriter(Log, true);
             BufferedWriter bw = new BufferedWriter(fw);
-            LocalDateTime tiempo = LocalDateTime.now();
-            DateTimeFormatter formateo = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-            String fecha = tiempo.format(formateo);
 
+            LocalDateTime tiempo = LocalDateTime.now();
+            DateTimeFormatter formateo = DateTimeFormatter.ofPattern("HH:mm:ss yyyy-MM-dd ");
+
+
+            String fecha = tiempo.format(formateo);
             String linea = "{" + fecha + "}" + mensaje;
 
             bw.write(linea);

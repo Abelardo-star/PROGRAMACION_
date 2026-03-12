@@ -1,6 +1,6 @@
 package com.rpg.utils;
+import com.rpg.handler.FormatoInvalidoException;
 import com.rpg.model.cuidades;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ public class TxtHelper {
 
     public TxtHelper(){ }
 
-    public static List<cuidades> leerciudades() {
+    public static List<cuidades> leerciudades() throws FormatoInvalidoException {
 
         List<cuidades> listaciudades = new ArrayList<>();
 
@@ -37,9 +37,8 @@ public class TxtHelper {
             }
 
 
-        } catch (IOException e) {
-            System.out.println("No ha podido abrise el archivo: " + e.getMessage());
-            return listaciudades;
+        } catch (Exception e) {
+            throw new FormatoInvalidoException("No se ha podido abrir o leer el archivo");
         }
 
         return listaciudades;
