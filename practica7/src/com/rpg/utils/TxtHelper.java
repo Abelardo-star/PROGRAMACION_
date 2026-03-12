@@ -38,6 +38,7 @@ public class TxtHelper {
 
 
         } catch (Exception e) {
+            LoggerCustom.Error("No se ha podido abrir o leer el archivo");
             throw new FormatoInvalidoException("No se ha podido abrir o leer el archivo");
         }
 
