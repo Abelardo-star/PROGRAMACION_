@@ -108,7 +108,13 @@ public class GestionMundo {
         }
     }
 
-    //NO SE COMO SEGUIR
+    public void guardarCambios() throws FormatoInvalidoException {
+
+        System.out.println("Guardando cambios en personajes.json");
+
+        JsonHelper.guardarPersonajes(personajes);
+
+    }
 }
 
 

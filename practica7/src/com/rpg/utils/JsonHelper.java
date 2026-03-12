@@ -8,6 +8,8 @@ import com.rpg.model.personaje;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
 public class JsonHelper {
@@ -26,6 +28,7 @@ public class JsonHelper {
             return listaItem;
 
         } catch (Exception e) {
+            LoggerCustom.Error("Error de formato en item.json");
             throw new FormatoInvalidoException("Error de formato en item.json");
         }
     }
@@ -41,7 +44,26 @@ public class JsonHelper {
             }
             return listaPersonaje;
         } catch (FileNotFoundException e) {
+            LoggerCustom.Error("Error de formato en personaje.json");
             throw new FormatoInvalidoException("Error de formato en personaje.json");
+        }
+    }
+
+    public static void guardarPersonajes(List<personaje> personaje) throws FormatoInvalidoException {
+
+        try {
+            Gson g = new Gson();
+            FileWriter writer = new FileWriter("practica7/ficheros/personaje.json");
+
+            g.toJson(personaje, writer);
+
+            writer.close();
+
+            System.out.println("Personajes guardados correctamente");
+
+        } catch (Exception e) {
+            LoggerCustom.Error("Error guardando personaje.json");
+            throw new FormatoInvalidoException("Error guardando personaje.json");
         }
     }
 }
