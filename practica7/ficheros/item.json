@@ -1,0 +1,5 @@
+[
+  { "id": "W01", "nombre": "Arco Magico", "tipo": "ARMA", "valor": 50 },
+  { "id": "P01", "nombre": "Pocion", "tipo": "CONSUMIBLE", "valor": 25 },
+  { "id": "W02", "nombre": "Espada Dorada", "tipo": "ARMA", "valor": 75 }
+]
