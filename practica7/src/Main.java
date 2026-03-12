@@ -1,15 +1,20 @@
-import com.rpg.utils.JsonHelper;
-import com.rpg.utils.TxtHelper;
+import com.rpg.handler.RPGDataException;
+import com.rpg.services.GestionMundo;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Main {
-    public static void main(String[] args){
-        System.out.println("Ciudades:");
-        TxtHelper t = new TxtHelper();
-        System.out.println(t.leerciudades());
-        System.out.println("Item:");
-        JsonHelper j = new JsonHelper();
-        System.out.println(j.leerItem());
-        System.out.println("Personajes:");
-        System.out.println(j.leerPersonaje());
+    public static void main(String[] args) throws RPGDataException {
+
+        GestionMundo mundo = new GestionMundo();
+
+        mundo.cargardatos();
+
+        mundo.crearPersonaje("Paquita", "Elfo", 10, new ArrayList<>(List.of("W01")));
+
+        mundo.verPersonajeyObjetos();
+
     }
 }
