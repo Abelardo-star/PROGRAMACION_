@@ -12,11 +12,13 @@ public class Main {
 
         mundo.cargardatos();
 
-        mundo.crearPersonaje("Paquita", "Elfo", 10, new ArrayList<>(List.of("W01")));
+        mundo.ValidarEquipamiento();
+
+        //mundo.crearPersonaje("Kiki", "Enana", 20, new ArrayList<>(List.of("P01")),30,20);
 
         mundo.verPersonajeyObjetos();
 
-        mundo.guardarCambios();
+        //mundo.guardarCambios();
 
     }
 }

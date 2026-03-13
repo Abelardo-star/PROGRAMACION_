@@ -1,1 +1,30 @@
-[{"nombre":"Licurgo","raza":"Elfo","nivel":10},{"nombre":"Lucius","raza":"Humano","nivel":20},{"nombre":"Paquita","raza":"Elfo","nivel":10,"equipo":[{"id":"W01","nombre":"Arco Magico","tipo":"ARMA","valor":50}]}]
+[
+  {
+    "nombre": "Licurgo",
+    "raza": "Elfo",
+    "nivel": 10,
+    "equipo": [
+      {
+        "id": "W01",
+        "nombre": "Arco Magico",
+        "tipo": "ARMA",
+        "valor": 50
+      }
+    ],
+    "fuerza": 20
+  },
+  {
+    "nombre": "Lucius",
+    "raza": "Humano",
+    "nivel": 20,
+    "equipo": [
+      {
+        "id": "W04",
+        "nombre": "Titanica Dorada",
+        "tipo": "ARMA",
+        "valor": 75
+      }
+    ],
+    "fuerza": 20
+  }
+  ]

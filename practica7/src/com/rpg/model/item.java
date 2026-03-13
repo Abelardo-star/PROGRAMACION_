@@ -9,12 +9,14 @@ public class item {
     private String tipo;
     private Integer valor;
     private List<item> equipo;
+    private int peso;
 
-    public item(String id , String nombre , String tipo ,Integer valor){
+    public item(String id , String nombre , String tipo ,Integer valor,int peso){
         this.id=id;
         this.nombre=nombre;
         this.tipo=tipo;
         this.valor=valor;
+        this.peso=peso;
     }
     //GET
 
@@ -28,6 +30,10 @@ public class item {
 
     public String getId() {
         return id;
+    }
+
+    public int getPeso() {
+        return peso;
     }
 
     public String getTipo() {
@@ -57,6 +63,10 @@ public class item {
 
     public void setValor(Integer valor) {
         this.valor = valor;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
     }
 
     public void setEquipo(List<item> equipo) {
