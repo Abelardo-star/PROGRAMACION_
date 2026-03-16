@@ -1,6 +1,6 @@
 [
   { "id": "W01", "nombre": "Arco Magico", "tipo": "ARMA", "valor": 50, "peso": 20 },
   { "id": "P01", "nombre": "Pocion", "tipo": "CONSUMIBLE", "valor": 25, "peso": 20 },
-  { "id": "W02", "nombre": "Espada Dorada", "tipo": "ARMA", "valor": 75 , "peso": 40},
-  { "id": "W04", "nombre": "Titanica Dorada", "tipo": "ARMA", "valor": 75 , "peso": 4000}
+  { "id": "W02", "nombre": "Espada Dorada", "tipo": "ARMA", "valor": 75 , "peso": 1240},
+  { "id": "W04", "nombre": "Titanica Dorada", "tipo": "ARMA", "valor": 75 , "peso": 23}
 ]

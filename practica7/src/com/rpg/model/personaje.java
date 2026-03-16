@@ -8,7 +8,6 @@ public class personaje {
     private String raza;
     private Integer nivel;
     private List<item> equipo;
-    private int peso;
     private int fuerza;
 
     public personaje(String nombre, String raza, Integer nivel, int fuerza){
@@ -36,9 +35,6 @@ public class personaje {
         return equipo;
     }
 
-    public int getPeso() {
-        return peso;
-    }
 
     public int getFuerza() {
         return fuerza ;
@@ -65,7 +61,4 @@ public class personaje {
         this.fuerza = fuerza;
     }
 
-    public void setPeso(int peso) {
-        this.peso = peso;
-    }
 }

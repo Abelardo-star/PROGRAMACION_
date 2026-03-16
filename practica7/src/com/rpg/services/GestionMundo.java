@@ -64,32 +64,28 @@ public class GestionMundo {
 
     }
 
-    public void ValidarEquipamiento() throws SobrecargaEquipamiento {
+    public void ValidarEquipamiento(String Nombre, int fuerza ) throws SobrecargaEquipamiento {
 
-        System.out.println("validando Equipamiento: ");
-        for (personaje p : personajes) {
 
             int pesoTotal = 0;
-            for (item t : objetos ) {
-                if (t != null) {
-                    pesoTotal += t.getPeso();
-                    }
-                }
+            for (item t : objetos) {
 
-            int capacidadMaxima = p.getFuerza() * 5;
-            try {
+                pesoTotal += t.getPeso();
+
+            }
+            int capacidadMaxima = fuerza * 5;
                 if (pesoTotal > capacidadMaxima) {
 
-                    System.out.println("Carga del persoanje completa: " + p.getNombre());
+                    System.out.println("Carga del persoanje completa: " + Nombre);
                 }
 
-            }catch (Exception e) {
-                LoggerCustom.Error("Sobrecarga de equipamiento en " + p.getNombre());
+                LoggerCustom.Error("Sobrecarga de equipamiento en " + Nombre);
 
-                throw new SobrecargaEquipamiento("El personaje " + p.getNombre() + " supera su capacidad de carga");
-            }
-        }
+                throw new SobrecargaEquipamiento("El personaje " + Nombre + " supera su capacidad de carga");
     }
+
+
+
 
     //Crear Personaje
     public void crearPersonaje(String nombre, String raza, int nivel, List<String> idsItem , int fuerza)  throws RecursoNoEncontradoException, DatoInvalidoException, SobrecargaEquipamiento {
