@@ -32,7 +32,6 @@ public class PersonajesDao {
                 Razas razaVinculada = rDao.buscarPorId(rs.getInt("id_raza"));
                 ClasesRPG claseVinculada = clDao.buscarPorId(rs.getInt("id_clase"));
 
-                // Control de nulos sin wasNull
                 Integer idCiudad = (Integer) rs.getObject("id_ciudad_actual");
                 Ciudades localidad = null;
                 if (idCiudad != null) {
@@ -99,7 +98,6 @@ public class PersonajesDao {
         }
     }
     public void registrarItemEnInventario(int idPersonaje, int idItem) {
-        // Esta consulta es "mágica": intenta insertar, y si hay conflicto (ya existe), actualiza la cantidad.
         String sql = "INSERT INTO Inventarios (id_personaje, id_item, cantidad) VALUES (?, ?, 1) " +
                 "ON CONFLICT (id_personaje, id_item) DO UPDATE SET cantidad = Inventarios.cantidad + 1";
 
@@ -118,7 +116,6 @@ public class PersonajesDao {
     }
 
     public void insertarNuevoPersonaje(String nombre, int idRaza, int idClase) {
-        // SQL con los valores por defecto para un nivel 1
         String sql = "INSERT INTO Personajes (nombre, id_raza, id_clase, nivel, oro, vida_actual) VALUES (?, ?, ?, 1, 100, 100)";
 
         try (Connection con = ConexionDB.getConexion();
@@ -129,10 +126,6 @@ public class PersonajesDao {
             pstmt.setInt(3, idClase);
 
             pstmt.executeUpdate();
-
-            // OPCIONAL: Si quieres que el personaje aparezca en la lista nada más crearlo
-            // sin reiniciar el programa, deberías llamar aquí a tu método de cargar:
-            // this.cargarPersonajes(ciudadesDao, razasDao, clasesRPGDao);
 
         } catch (SQLException e) {
             System.out.println("Error al insertar el nuevo personaje");
