@@ -11,7 +11,6 @@ public class PersonajesDao {
     private ItemsDao daoArticulos;
     private HabilidadDao daoTecnicas;
 
-    // Constructor que recibe los DAOs necesarios para el inventario y habilidades
     public PersonajesDao(ItemsDao daoArticulos, HabilidadDao daoTecnicas) {
         this.catalogoAventureros = new ArrayList<>();
         this.daoArticulos = daoArticulos;
@@ -49,7 +48,6 @@ public class PersonajesDao {
                         localidad
                 );
 
-                // Cargar inventario y habilidades desde los otros DAOs
                 aventurero.setInventario(daoArticulos.getInventario(aventurero.getId(), daoArticulos.getListaItems()));
                 aventurero.setHabilidadesEquipadas(daoTecnicas.getHabilidadesPersonaje(daoTecnicas.getListaHabilidades(), aventurero.getId()));
 
@@ -64,28 +62,29 @@ public class PersonajesDao {
         String sql = "UPDATE Personajes SET oro = ? WHERE id = ?";
         try (Connection con = ConexionDB.getConexion();
              PreparedStatement pstmt = con.prepareStatement(sql)) {
-
             pstmt.setInt(1, nuevoOro);
             pstmt.setInt(2, idPersonaje);
             pstmt.executeUpdate();
-
         } catch (SQLException e) {
             Log.Error("Error SQL al actualizar oro: " + e.getMessage());
         }
+    }
+
+    public void updateOro(int idPersonaje, int nuevoOro) {
+        actualizarOro(idPersonaje, nuevoOro);
     }
 
     public void desterrarPersonaje(int idPersonaje) {
         String sql = "UPDATE Personajes SET id_ciudad_actual = NULL WHERE id = ?";
         try (Connection con = ConexionDB.getConexion();
              PreparedStatement pstmt = con.prepareStatement(sql)) {
-
             pstmt.setInt(1, idPersonaje);
             pstmt.executeUpdate();
-
         } catch (SQLException e) {
             Log.Error("Error SQL al desterrar personaje: " + e.getMessage());
         }
     }
+
     public void ActualizarCuidad(int idCiudad, int idPersonaje ){
         String sql = "UPDATE PERSONAJES SET ID_CIUDAD_ACTUAL = ? WHERE ID = ?";
         try(Connection connection = ConexionDB.getConexion();
@@ -97,39 +96,49 @@ public class PersonajesDao {
             System.out.println(e.getMessage());
         }
     }
+
+    public void updateCiudad(int idCiudad, int idPersonaje) {
+        ActualizarCuidad(idCiudad, idPersonaje);
+    }
+
+
     public void registrarItemEnInventario(int idPersonaje, int idItem) {
         String sql = "INSERT INTO Inventarios (id_personaje, id_item, cantidad) VALUES (?, ?, 1) " +
                 "ON CONFLICT (id_personaje, id_item) DO UPDATE SET cantidad = Inventarios.cantidad + 1";
-
         try (Connection con = ConexionDB.getConexion();
              PreparedStatement pstmt = con.prepareStatement(sql)) {
-
             pstmt.setInt(1, idPersonaje);
             pstmt.setInt(2, idItem);
-
             pstmt.executeUpdate();
-
         } catch (SQLException e) {
-            System.out.println("Error al registrar item en inventario");
             Log.Error("Error SQL en registrarItemEnInventario: " + e.getMessage());
         }
     }
 
     public void insertarNuevoPersonaje(String nombre, int idRaza, int idClase) {
         String sql = "INSERT INTO Personajes (nombre, id_raza, id_clase, nivel, oro, vida_actual) VALUES (?, ?, ?, 1, 100, 100)";
-
         try (Connection con = ConexionDB.getConexion();
              PreparedStatement pstmt = con.prepareStatement(sql)) {
-
             pstmt.setString(1, nombre);
             pstmt.setInt(2, idRaza);
             pstmt.setInt(3, idClase);
-
             pstmt.executeUpdate();
 
+
         } catch (SQLException e) {
-            System.out.println("Error al insertar el nuevo personaje");
             Log.Error("Error SQL en insertarNuevoPersonaje: " + e.getMessage());
+        }
+    }
+
+    public void aprenderHabilidad(int idPersonaje, int idHabilidad) {
+        String sql = "INSERT INTO Personajes_Habilidades (id_personaje, id_habilidad, equipada_combate) VALUES (?, ?, true)";
+        try (Connection con = ConexionDB.getConexion();
+             PreparedStatement pstmt = con.prepareStatement(sql)) {
+            pstmt.setInt(1, idPersonaje);
+            pstmt.setInt(2, idHabilidad);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            Log.Error("Error al aprender habilidad: " + e.getMessage());
         }
     }
 
@@ -138,13 +147,11 @@ public class PersonajesDao {
     }
 
     public Personajes buscarPorId(int idBuscado) {
-        for (int i = 0; i < catalogoAventureros.size(); i++) {
-            Personajes p = catalogoAventureros.get(i);
+        for (Personajes p : catalogoAventureros) {
             if (p.getId() == idBuscado) {
                 return p;
             }
         }
         return null;
     }
-
 }

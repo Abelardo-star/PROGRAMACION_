@@ -21,7 +21,7 @@ public class HabilidadDao {
              ResultSet rs = st.executeQuery(sql)) {
             while (rs.next()) {
                 listaHabilidades.add(new Habilidades(
-                        rs.getInt("id"), rs.getString("nombre"), rs.getInt("danio_base"),
+                        rs.getInt("id"), rs.getString("nombre"), rs.getInt("dano_base"),
                         rs.getInt("usos_maximos"), rs.getInt("id_clase")
                 ));
             }

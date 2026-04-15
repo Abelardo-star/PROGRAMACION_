@@ -4,14 +4,14 @@ package rpg.model;
 public class Habilidades {
     private int id;
     private String nombre;
-    private int danioBase;
+    private int danoBase;
     private int usosMaximos;
     private int id_clase;
 
-    public Habilidades(int id, String nombre, int danioBase, int usosMaximos, int id_clase) {
+    public Habilidades(int id, String nombre, int danoBase, int usosMaximos, int id_clase) {
         this.id = id;
         this.nombre = nombre;
-        this.danioBase = danioBase;
+        this.danoBase = danoBase;
         this.usosMaximos = usosMaximos;
         this.id_clase = id_clase;
     }
@@ -32,12 +32,12 @@ public class Habilidades {
         this.nombre = nombre;
     }
 
-    public int getDanioBase() {
-        return danioBase;
+    public int getDanoBase() {
+        return danoBase;
     }
 
-    public void setDanioBase(int danioBase) {
-        this.danioBase = danioBase;
+    public void setDanoBase(int danoBase) {
+        this.danoBase = danoBase;
     }
 
     public int getUsosMaximos() {
@@ -58,6 +58,6 @@ public class Habilidades {
 
     @Override
     public String toString() {
-        return "Habilidades{" + "id=" + id + ", nombre='" + nombre + '\'' + ", danioBase=" + danioBase + ", usosMaximos=" + usosMaximos + ", id_clase=" + id_clase + '}';
+        return "Habilidades{" + "id=" + id + ", nombre='" + nombre + '\'' + ", danioBase=" + danoBase + ", usosMaximos=" + usosMaximos + ", id_clase=" + id_clase + '}';
     }
 }

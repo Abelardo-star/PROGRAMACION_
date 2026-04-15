@@ -29,7 +29,6 @@ public class GestionMundo {
         this.eventos = new EventosMundo();
         this.personajesDao = new PersonajesDao(itemsDao, habilidadDao);
         personajesDao.cargarPersonajes(ciudadesDao, razasDao, clasesRPGDao);
-
         iniciar();
     }
 
@@ -47,7 +46,6 @@ public class GestionMundo {
             case 2 -> viajarACiudad();
             case 3 -> irALaTienda();
             case 4 -> {
-                // Cobro de impuestos con Iterator
                 eventos.cobrarImpuestos(personajesDao.getListaPersonajes(), personajesDao);
                 vista.mostrarMensaje("Impuestos procesados. Los morosos han sido desterrados.");
             }
@@ -57,9 +55,8 @@ public class GestionMundo {
         }
     }
 
-
     public void crearPersonaje() {
-        vista.mostrarMensaje("\n--- RECLUTAR NUEVO HÉROE ---");
+        vista.mostrarMensaje("\n--- CREAR NUEVO HÉROE ---");
         String nombre = vista.pedirNombre();
 
         vista.mostrarListaRazas(razasDao.getListaRazas());
@@ -69,8 +66,27 @@ public class GestionMundo {
         int idClase = vista.pedirIdClase();
 
         personajesDao.insertarNuevoPersonaje(nombre, idRaza, idClase);
-        System.out.println("Nuevo aventurero: " + nombre);
-        vista.mostrarMensaje("¡Personaje guardado en la base de datos!");
+
+        personajesDao.cargarPersonajes(ciudadesDao, razasDao, clasesRPGDao);
+
+        Personajes recienCreado = null;
+        for (Personajes p : personajesDao.getListaPersonajes()) {
+            if (p.getNombre().equals(nombre)) {
+                recienCreado = p;
+            }
+        }
+
+        if (recienCreado != null) {
+            for (Habilidades h : habilidadDao.getListaHabilidades()) {
+                if (h.getId_clase() == idClase) {
+                    personajesDao.aprenderHabilidad(recienCreado.getId(), h.getId());
+                }
+            }
+            personajesDao.cargarPersonajes(ciudadesDao, razasDao, clasesRPGDao);
+        }
+
+        System.out.println("Nuevo aventurero: " + nombre + " ha despertado sus habilidades.");
+        vista.mostrarMensaje("¡Personaje guardado y entrenado!");
     }
 
     public void viajarACiudad() {
@@ -83,6 +99,8 @@ public class GestionMundo {
         vista.mostrarListaCiudades(ciudadesDao.getListaCiudades());
         int idCiudad = vista.pedirIdCiudadViaje(psel);
         Ciudades ciudad = ciudadesDao.buscarPorId(idCiudad);
+
+        if (ciudad == null) return;
 
         try {
             if (psel.getNivel() < ciudad.getNivelMinimoAcceso()) {
@@ -136,7 +154,6 @@ public class GestionMundo {
         }
     }
 
-
     public void mostrarEstadisticasGremio(List<Personajes> aventureros) {
         Map<String, Integer> estadisticas = new HashMap<>();
 
@@ -145,7 +162,13 @@ public class GestionMundo {
             estadisticas.put(clase, estadisticas.getOrDefault(clase, 0) + 1);
         }
 
-        vista.mostrarMensaje("\nESTADÍSTICAS DEL GREMIO (HÉROES POR CLASE) ---");
-        System.out.println(estadisticas);
+        vista.mostrarMensaje("\n---ESTADÍSTICAS DEL GREMIO---");
+        if (estadisticas.isEmpty()) {
+            System.out.println("El gremio está vacío.");
+        } else {
+            for (Map.Entry<String, Integer> entrada : estadisticas.entrySet()) {
+                System.out.println(entrada.getKey() + ": " + entrada.getValue() + " héroes");
+            }
+        }
     }
 }

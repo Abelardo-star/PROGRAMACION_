@@ -13,7 +13,7 @@ public class Vista {
         System.out.println("2. Viajar a Ciudad");
         System.out.println("3. Ir a la Tienda");
         System.out.println("4. Cobrar Impuestos");
-        System.out.println("6. Estadisticas Gremio");
+        System.out.println("5. Estadisticas Gremio");
         System.out.println("0. Salir");
         System.out.print("Elige una opcion: ");
 
