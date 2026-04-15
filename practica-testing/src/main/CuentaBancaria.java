@@ -5,8 +5,8 @@ public class CuentaBancaria {
     private double saldo;
 
     public CuentaBancaria(String titular, double saldo){
-        this.saldo=saldo;
-        this.titular=titular;
+        this.saldo= saldo;
+        this.titular= titular;
     }
 
     //GET
@@ -27,5 +27,23 @@ public class CuentaBancaria {
 
     public void setTitular(String titular) {
         this.titular = titular;
+    }
+
+    //Metodo retirar
+    public void retirar(double cantidad){
+        if(cantidad <= 0){
+            throw new IllegalArgumentException("La cantidad a retirar tiene que ser mayor a 0");
+        }
+        if(cantidad > this.saldo){
+            throw new IllegalArgumentException("Fondos Insuficientes");
+        }
+        this.saldo -= cantidad;
+    }
+    //Metodo depositar
+    public void depositar(double cantidad) {
+        if (cantidad <= 0) {
+                throw new IllegalArgumentException("La cantidad a depositar debe ser mayor que cero.");
+        }
+        this.saldo += cantidad;
     }
 }
