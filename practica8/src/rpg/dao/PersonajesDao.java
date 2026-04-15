@@ -70,10 +70,6 @@ public class PersonajesDao {
         }
     }
 
-    public void updateOro(int idPersonaje, int nuevoOro) {
-        actualizarOro(idPersonaje, nuevoOro);
-    }
-
     public void desterrarPersonaje(int idPersonaje) {
         String sql = "UPDATE Personajes SET id_ciudad_actual = NULL WHERE id = ?";
         try (Connection con = ConexionDB.getConexion();
@@ -96,11 +92,6 @@ public class PersonajesDao {
             System.out.println(e.getMessage());
         }
     }
-
-    public void updateCiudad(int idCiudad, int idPersonaje) {
-        ActualizarCuidad(idCiudad, idPersonaje);
-    }
-
 
     public void registrarItemEnInventario(int idPersonaje, int idItem) {
         String sql = "INSERT INTO Inventarios (id_personaje, id_item, cantidad) VALUES (?, ?, 1) " +
